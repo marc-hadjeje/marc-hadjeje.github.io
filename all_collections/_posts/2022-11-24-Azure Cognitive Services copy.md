@@ -12,6 +12,9 @@ categories: [AI,Cognitives Service, Translator,Custom Dictionnary]
 	Use the following url by creating a new request "Post":  https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=xx&to=xx
 xx being the iso codes of the languages to be translated
 
+![Text translator](https://raw.githubusercontent.com/marc-hadjeje/marc-hadjeje.github.io/main/assets/images/text_translator.jpg)
+
+
 	Add in the header when calling the API the 3 parameters concerning your cognitive services
 
  
