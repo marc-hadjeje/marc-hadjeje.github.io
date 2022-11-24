@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Translator dans Azure Cognitive Service  
-date: 2021-11-04
+date: 2022-11-23
 categories: ["jekyll", "Test Post", "first post"]
 ---
 
