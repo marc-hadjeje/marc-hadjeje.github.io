@@ -2,7 +2,7 @@
 layout: post
 title: Translator dans Azure Cognitive Service  
 date: 2022-11-23
-categories: [AI,Azure Cognitives Service, Translator,Custom Dictionnary]
+categories: [AI,Cognitives Service, Translator,Custom Dictionnary]
 ---
 
 Text can be **bold**, _italic_, ~~strikethrough~~ or `keyword`
