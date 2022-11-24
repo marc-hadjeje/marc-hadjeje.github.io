@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Jekyll Markdown
+title: Translator dans Azure Cognitive Service  
 date: 2021-11-04
 categories: ["jekyll", "Test Post", "first post"]
 ---
