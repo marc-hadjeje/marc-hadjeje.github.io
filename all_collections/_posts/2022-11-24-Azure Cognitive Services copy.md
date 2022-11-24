@@ -5,9 +5,9 @@ date: 2022-11-23
 categories: [AI,Cognitives Service, Translator,Custom Dictionnary]
 ---
 
-## Creation of the service Cognitives Ressource
+##### Creation of the service Cognitives Ressource
 
-### 1st step, test postman with translation _without the dictionary
+###### Test postman with translation _without the dictionary
 
 	Use the following url by creating a new request "Post":  https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=xx&to=xx
 xx being the iso codes of the languages to be translated
@@ -15,7 +15,7 @@ xx being the iso codes of the languages to be translated
 ![Text translator](https://raw.githubusercontent.com/marc-hadjeje/marc-hadjeje.github.io/main/assets/images/text_translator.jpg)
 
 
-#### Add in the header when calling the API the 3 parameters concerning your cognitive services
+###### Add in the header when calling the API the 3 parameters concerning your cognitive services
 
 -	Ocp-Apim-Subscription-Key :  this is the key to the service 
 
@@ -33,22 +33,19 @@ Add the text to be translated to the body tab of postman :
 ```
 ![Text translator](https://raw.githubusercontent.com/marc-hadjeje/marc-hadjeje.github.io/main/assets/images/text_translator.jpg)
 
-###	you will see the translation in the body as a result
+######	you will see the translation in the body as a result
 
 ![Text translator](https://raw.githubusercontent.com/marc-hadjeje/marc-hadjeje.github.io/main/assets/images/text_translator.jpg)
 
 
-###2st step, test postman with a translation “with the dictionary”
+###### 2st step, test postman with a translation “with the dictionary”
 
 -	To create your company dictionary you need to log in to the portal: https://portal.customtranslator.azure.ai/workspaces
 -	Create a new workspace and link it to your translator service with the same information as in the API call:
 
 ![Text translator](https://raw.githubusercontent.com/marc-hadjeje/marc-hadjeje.github.io/main/assets/images/text_translator.jpg)
 
-	Create new project with source language and target language and category ( it will be useful to call API with custom dictionary)
-
-
- 
+######	Create new project with source language and target language and category ( it will be useful to call API with custom dictionary)
 
 
 	Create document set in order to download Dictionnary set  ( you can choose Phrase Dictionnary or Sentence Dictionnary )  , please read the documentation to understand the difference 
