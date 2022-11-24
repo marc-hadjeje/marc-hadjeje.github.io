@@ -9,8 +9,13 @@ categories: [AI,Cognitives Service, Translator,Custom Dictionnary]
 
 ###### Test postman with translation _without the dictionary
 
-	Use the following url by creating a new request "Post":  https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=xx&to=xx
-xx being the iso codes of the languages to be translated
+	Use the following url by creating a new request "Post": 
+
+```api
+// API url: Replace xx being the iso codes of the languages to be translated
+ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=xx&to=xx
+}; 
+```
 
 ![Text translator](https://raw.githubusercontent.com/marc-hadjeje/marc-hadjeje.github.io/main/assets/images/text_translator.jpg)
 
@@ -54,18 +59,17 @@ example: filename_en.TXT
 
 	Train model with your dictionary document set , you will find kpis with the number for sentences ,   It can take a couple of time to train a new model.
 
- 
+ ![Text translator](https://raw.githubusercontent.com/marc-hadjeje/marc-hadjeje.github.io/main/assets/images/text_translator.jpg)
  
 => Publish the model in the right region
 
- 
-
-
- 
+ ![Text translator](https://raw.githubusercontent.com/marc-hadjeje/marc-hadjeje.github.io/main/assets/images/text_translator.jpg)
 
 	Once you have published the model, you can call the api by adding the categoryid you find in the published model
 
 https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=de&category=<category-Id>
+
+![Text translator](https://raw.githubusercontent.com/marc-hadjeje/marc-hadjeje.github.io/main/assets/images/text_translator.jpg)
 
 I replaced really by “tatata” in my dictionnary
 
