@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Translator dans Azure Cognitive Service  
+title: Custom Translator via Azure Cognitive Service  
 date: 2022-11-23
 categories: [AI,Cognitives Service, Translator,Custom Dictionnary]
 ---
