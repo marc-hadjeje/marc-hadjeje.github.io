@@ -2,20 +2,20 @@
 layout: post
 title: Custom Translator via Azure Cognitive Service  
 date: 2022-11-23
-categories: [AI,Cognitives Service, Translator,Custom Dictionnary]
+categories: [AI,Cognitives Service, Translator,Custom Dictionnary,1st post]
 ---
 
-##### Creation of the service Cognitives Ressource
+I'm interested in AI via the usage of Translator which is part of the Azure Cognitive services on Azure, in a simple way it's a tool that allows you to translate your texts. It's easy to use, it allows you to integrate it into your backoffices with a lot of sample code allowing you to accelerate your development and you can test it quite easily through the Azure portal or via APIs (in my demo via postman). There is a lot of documentation on this service, however it is possible to improve the translations that Microsoft offers, via a training via the addition of a custom dictionary allowing you to add the vocabulary of your company
+##### Creation of the service Cognitives | Translator Ressource 
+
+![Text translator](https://raw.githubusercontent.com/marc-hadjeje/marc-hadjeje.github.io/main/assets/images/text_translator.jpg)
 
 ###### Test postman with translation _without the dictionary
 
-	Use the following url by creating a new request "Post": 
+-	Use the following url by creating a new request "Post": 
 
-```api
-// API url: Replace xx being the iso codes of the languages to be translated
  https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=xx&to=xx
-}; 
-```
+
 
 ![Text translator](https://raw.githubusercontent.com/marc-hadjeje/marc-hadjeje.github.io/main/assets/images/text_translator.jpg)
 
