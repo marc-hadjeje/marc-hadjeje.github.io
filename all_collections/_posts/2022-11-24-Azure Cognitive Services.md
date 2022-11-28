@@ -91,8 +91,9 @@ Once you have published the model, you can call the api by adding the categoryid
 
 Now you can use the API below by adding the categoryid corresponding to your custom dictionary (with the same source and target langage in the url of your API) and you will see your custom translation !
 
-In the example below I am translating from English into Chinese Traditional and add category-id to add custom dictionnary to the translation:
+**https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to=xx&category=category-Id**
 
-**https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to=zh-Hant&category=category-Id**
+
+In my example below I am translating from English into Chinese Traditional and add category-id to add custom dictionnary to the translation:
 
  ![traim model final result](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/result_custom_traduction.jpg?raw=true)
