@@ -27,7 +27,7 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to=xx
 
 -	Ocp-Apim-Subscription-Key :  this is the key to the service 
 
-![Text translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/publish_model2.jpg)
+![Text translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/param_cognitive.jpg)
 
 -	Content-Type : this is the extraction format, leave it as is
 -	Ocp-Apim-Subscription-Region : this is the region where you have deployed the service
@@ -43,39 +43,47 @@ Add the text to be translated to the body tab of postman :
 
 ######	you will see the translation in the body as a result
 
-![Text translator](https://raw.githubusercontent.com/marc-hadjeje/marc-hadjeje.github.io/main/assets/images/text_translator.jpg)
+![Text translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/translation_result.jpg)
 
 
-###### 2st step, test postman with a translation “with the dictionary”
+###### 2st step, test postman with a translation “with own dictionary”
 
--	To create your company dictionary you need to log in to the portal: https://portal.customtranslator.azure.ai/workspaces
+-	To create your company dictionary you need to log in to the portal: [postman](https://portal.customtranslator.azure.ai/workspaces))
 -	Create a new workspace and link it to your translator service with the same information as in the API call:
 
-![Text translator](https://raw.githubusercontent.com/marc-hadjeje/marc-hadjeje.github.io/main/assets/images/text_translator.jpg)
+![Text translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/new_project_translator.jpg)
 
 ######	Create new project with source language and target language and category ( it will be useful to call API with custom dictionary)
 
 
-	Create document set in order to download Dictionnary set  ( you can choose Phrase Dictionnary or Sentence Dictionnary )  , please read the documentation to understand the difference 
+-	Create document set in order to download Dictionnary set  ( you can choose Phrase Dictionnary or Sentence Dictionnary )  , please read the documentation to understand the difference 
 Respect the partern of the file name when uploading the dictionary 
 example: filename_en.TXT
 
-	Train model with your dictionary document set , you will find kpis with the number for sentences ,   It can take a couple of time to train a new model.
 
- ![Text translator](https://raw.githubusercontent.com/marc-hadjeje/marc-hadjeje.github.io/main/assets/images/text_translator.jpg)
+![Text translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/new_project_translator.jpg)
+
+
+
+-	Train model with your dictionary document set , you will find kpis with the number for sentences ,   It can take a couple of time to train a new model.
+
+ ![Text translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/train_model.jpg)
  
 => Publish the model in the right region
 
- ![Text translator](https://raw.githubusercontent.com/marc-hadjeje/marc-hadjeje.github.io/main/assets/images/text_translator.jpg)
+ ![Text translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/publish_model2.jpg)
 
-	Once you have published the model, you can call the api by adding the categoryid you find in the published model
+Once you have published the model, you can call the api by adding the categoryid you find in the published model
 
+```api
+// API code with syntax highlighting.
 https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=de&category=<category-Id>
-
-![Text translator](https://raw.githubusercontent.com/marc-hadjeje/marc-hadjeje.github.io/main/assets/images/text_translator.jpg)
+}; 
+```
 
 I replaced really by “tatata” in my dictionnary
 
 example :
  
+  ![Text translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/result.jpg)
 
