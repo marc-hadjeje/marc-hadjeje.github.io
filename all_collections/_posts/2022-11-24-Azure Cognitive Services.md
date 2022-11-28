@@ -10,7 +10,7 @@ In this post we will quickly explain how to use the translation service but espe
 
 ##### 1.Creation of the service Cognitives | Translator Ressource 
 
-![Text translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/Translator_creation.jpg?raw=true)
+![Creation translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/Translator_creation.jpg?raw=true)
 
 ###### Test the service with postman and call the API 
 
@@ -27,7 +27,7 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to=xx
 
 -	Ocp-Apim-Subscription-Key :  this is the key to the service 
 
-![Text translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/param_cognitive.jpg)
+![Param cognitive](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/param_cognitive.jpg)
 
 -	Content-Type : this is the extraction format, leave it as is
 -	Ocp-Apim-Subscription-Region : this is the region where you have deployed the service
@@ -43,7 +43,7 @@ Add the text to be translated to the body tab of postman :
 
 ######	you will see the translation in the body as a result
 
-![Text translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/translation_result.jpg)
+![Translation result](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/translation_result.jpg)
 
 
 ###### 2st step, test postman with a translation “with own dictionary”
@@ -51,7 +51,7 @@ Add the text to be translated to the body tab of postman :
 -	To create your company dictionary you need to log in to the portal: [postman](https://portal.customtranslator.azure.ai/workspaces))
 -	Create a new workspace and link it to your translator service with the same information as in the API call:
 
-![Text translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/new_project_translator.jpg)
+![new project translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/new_project_translator.jpg)
 
 ######	Create new project with source language and target language and category ( it will be useful to call API with custom dictionary)
 
@@ -61,17 +61,17 @@ Respect the partern of the file name when uploading the dictionary
 example: filename_en.TXT
 
 
-![Text translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/new_project_translator.jpg)
+![new translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/new_project_translator.jpg)
 
 
 
 -	Train model with your dictionary document set , you will find kpis with the number for sentences ,   It can take a couple of time to train a new model.
 
- ![Text translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/train_model.jpg)
+ ![traim model translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/train_model.jpg)
  
 => Publish the model in the right region
 
- ![Text translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/publish_model2.jpg)
+ ![publish translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/publish_model2.jpg)
 
 Once you have published the model, you can call the api by adding the categoryid you find in the published model
 
@@ -85,5 +85,5 @@ I replaced really by “tatata” in my dictionnary
 
 example :
  
-  ![Text translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/result.jpg)
+  ![Result translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/result.jpg)
 
