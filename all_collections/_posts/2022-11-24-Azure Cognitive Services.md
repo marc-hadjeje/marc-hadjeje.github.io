@@ -49,18 +49,26 @@ Add the text to be translated to the body tab of postman :
 ![Translation result](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/translation_result.jpg?raw=true)
 
 
-##### 2.Test postman with a translation include your "own dictionary”
+##### 2.Create custom translation project include your "own dictionary”
 
--	To create your company dictionary you need to log in to the portal : [customtranslator](https://portal.customtranslator.azure.ai/workspaces) which is an additional portal to the service allowing you to refine your translation
+-	To create your company dictionary you need to log in to the portal : [customtranslator](https://portal.customtranslator.azure.ai/workspaces) which is an additional portal to the service allowing you to refine your translation.
 
 -	Create a new workspace and link it to your translator service with the same information as in the API call:
 
+![new project translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/custom_translator_key.jpg?raw=true)
+
+######	Create new custom translation project link to your ressource 
+
+- Create a new project :
+
 ![new project translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/new_project_translator.jpg?raw=true)
 
-######	Create new project link to your ressource 
-
 -	Create document set in order to download Dictionnary set  ( you can choose Phrase Dictionnary or Sentence Dictionnary )  , please read [the documentation](https://learn.microsoft.com/en-us/azure/cognitive-services/Translator/custom-translator/concepts/dictionaries) to understand the difference.
-Respect the partern of the file name when uploading the dictionary 
+
+-   Upload you custom traduction :
+
+**Respect the partern of the file name when uploading the dictionary** 
+
 
 **example: filename_en.TXT**
 
