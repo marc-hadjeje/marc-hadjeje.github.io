@@ -48,7 +48,8 @@ Add the text to be translated to the body tab of postman :
 
 ###### 2st step, test postman with a translation “with own dictionary”
 
--	To create your company dictionary you need to log in to the portal: [postman](https://portal.customtranslator.azure.ai/workspaces)
+-	To create your company dictionary you need to log in to the portal customtranslator: [postman](https://portal.customtranslator.azure.ai/workspaces) which is an additional portal to the service allowing you to refine your translation
+
 -	Create a new workspace and link it to your translator service with the same information as in the API call:
 
 ![new project translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/new_project_translator.jpg?raw=true)
@@ -56,14 +57,16 @@ Add the text to be translated to the body tab of postman :
 ######	Create new project with source language and target language and category ( it will be useful to call API with custom dictionary)
 
 
--	Create document set in order to download Dictionnary set  ( you can choose Phrase Dictionnary or Sentence Dictionnary )  , please read the documentation to understand the difference 
+-	Create document set in order to download Dictionnary set  ( you can choose Phrase Dictionnary or Sentence Dictionnary )  , please read the documentation to understand the difference.
 Respect the partern of the file name when uploading the dictionary 
 example: filename_en.TXT
 
 
 ![new translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/new_project_translator.jpg)
 
+-  You have to upload 2 files the text to be translated and the expected translation
 
+![new translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/new_project_translator.jpg)
 
 -	Train model with your dictionary document set , you will find kpis with the number for sentences ,   It can take a couple of time to train a new model.
 
@@ -77,7 +80,9 @@ Once you have published the model, you can call the api by adding the categoryid
 
 https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=de&category=<category-Id>
 
-you will find category
+you will find category inside model detail: 
+
+https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=de&category=<category-Id>
 
 I replaced really by “tatata” in my dictionnary
 
