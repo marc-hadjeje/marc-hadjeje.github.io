@@ -69,7 +69,7 @@ Add the text to be translated to the body tab of postman :
 
 **example: filename_en.TXT**
 
--  You have to upload 2 files : the text to be translated and the expected translation
+-  You have to upload 2 files : the text to be translated and the expected translation, for example:
 
 ![new translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/content%20custom%20dictionnary.jpg?raw=true)
 
@@ -77,7 +77,7 @@ Add the text to be translated to the body tab of postman :
 
  ![traim model translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/train_model.jpg?raw=true)
  
-=> Publish the model in the right region
+-    Publish the model in the right region
 
  ![publish translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/publish_model2.jpg?raw=true)
 
@@ -85,7 +85,7 @@ Once you have published the model, you can call the api by adding the categoryid
 
  ![traim model translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/category_id.jpg?raw=true)
 
-Now ,You can call the API with the category to include your custom dictionnary on the translation !
+Now you can use the API below by adding the categoryid corresponding to your custom dictionary and you will have your custom translation !
 
-https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to=xx&category=<category-Id>
+**https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to=xx&category=category-Id**
 
