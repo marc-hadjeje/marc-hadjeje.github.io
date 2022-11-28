@@ -1,1 +1,1 @@
-Blog Technique Microsoft 
+Blog Tech Microsoft Azure
