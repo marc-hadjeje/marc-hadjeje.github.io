@@ -18,14 +18,14 @@ In this post we will quickly explain how to use the translation service but espe
 
 **https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=xx&to=xx**
 
- Or it is possible to directly detect the language to be translated by removing the "from" parameter
+Replace the **xx** from the URL by the [language code](https://learn.microsoft.com/en-us/azure/cognitive-services/translator/language-support) of your choice,it is possible to directly detect the language to be translated by removing the **"from"** parameter.
 
 **https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to=xx**
 
 
 ###### Add in the header when calling the API the 3 parameters concerning your cognitive services
 
--	Ocp-Apim-Subscription-Key :  this is the key to the service 
+-	Ocp-Apim-Subscription-Key :  **this is the key to the service** 
 
 ![Param cognitive](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/param_cognitive.jpg?raw=true)
 
