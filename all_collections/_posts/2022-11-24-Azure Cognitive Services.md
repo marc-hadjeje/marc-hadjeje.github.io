@@ -44,7 +44,7 @@ Add the text to be translated to the body tab of postman :
 ```
 ![Text translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/text_translator.jpg?raw=true)
 
--   You will see the translation in the body as a result
+-   You will see the translation in the body as a result!
 
 ![Translation result](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/translation_result.jpg?raw=true)
 
@@ -53,36 +53,27 @@ Add the text to be translated to the body tab of postman :
 
 -	To create your company dictionary you need to log in to the portal : [customtranslator](https://portal.customtranslator.azure.ai/workspaces) which is an additional portal to the service allowing you to refine your translation.
 
--	Create a new workspace and link it to your translator service with the same information as in the API call:
+-	Create a new workspace and link it to your translator ressource with the same information as in the API call:
 
-![new project translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/custom_translator_key.jpg?raw=true)
+![new workspace](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/custom_translator_key.jpg?raw=true)
 
-######	Create new custom translation project link to your ressource 
+-   Create new translation project link to your ressource :
 
-- Create a new project :
-
-![new project translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/new_project_translator.jpg?raw=true)
+![new project dico](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/new_project_translator.jpg?raw=true)
 
 -	Create document set in order to download Dictionnary set  ( you can choose Phrase Dictionnary or Sentence Dictionnary )  , please read [the documentation](https://learn.microsoft.com/en-us/azure/cognitive-services/Translator/custom-translator/concepts/dictionaries) to understand the difference.
 
-![new project translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/type_of_dictionnary.jpg?raw=true)
+![new type of dico](https://raw.githubusercontent.com/marc-hadjeje/marc-hadjeje.github.io/main/assets/images/type_of_dictionnary.jpg)
 
--   Upload you custom traduction :
-
-![new project translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/custom_translator_key.jpg?raw=true)
-
-**Respect the partern of the file name when uploading the dictionary** 
-
+**Respect the pattern of the file name when uploading the dictionary** 
 
 **example: filename_en.TXT**
 
-![new translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/new_project_translator.jpg)
-
 -  You have to upload 2 files the text to be translated and the expected translation
 
-![new translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/new_project_translator.jpg)
+![new translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/content%20custom%20dictionnary.jpg?raw=true)
 
--	Train model with your dictionary document set , you will find kpis with the number for sentences ,   It can take a couple of time to train a new model.
+-	Train model with your dictionary document set , you will find kpis with the number for sentences,It can take a couple of time to train a new model.
 
  ![traim model translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/train_model.jpg?raw=true)
  
@@ -90,17 +81,11 @@ Add the text to be translated to the body tab of postman :
 
  ![publish translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/publish_model2.jpg?raw=true)
 
-Once you have published the model, you can call the api by adding the categoryid you find in the published model
+Once you have published the model, you can call the api by adding the categoryid you find in the published model :
 
-https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=de&category=<category-Id>
+ ![traim model translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/category_id.jpg?raw=true)
 
-you will find category inside model detail: 
+Now ,You can call the API with the category to include your custom dictionnary on the translation !
 
-https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=de&category=<category-Id>
-
-I replaced really by “tatata” in my dictionnary
-
-example :
- 
-  ![Result translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/result.jpg?raw=true)
+https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to=xx&category=<category-Id>
 
