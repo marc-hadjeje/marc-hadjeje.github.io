@@ -53,6 +53,8 @@ Add the text to be translated to the body tab of postman :
 
 ##### 2.Create custom translation project include your "own dictionary”
 
+After several translation tests my customer would like to add his own translation on certain words because he considered that the translation of the service was not the best choice in the target language of his choice or wanted to add vocabularies specific to his company.  
+
 -	To create your company dictionary you need to log in to the portal : [custom translator](https://portal.customtranslator.azure.ai/workspaces) which is an additional portal to the service allowing you to refine your translation.
 
 -	Create a new workspace and link it to your translator ressource with the same information as in the API call:
