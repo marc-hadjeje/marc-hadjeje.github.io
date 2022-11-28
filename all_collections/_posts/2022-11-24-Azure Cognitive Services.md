@@ -27,7 +27,7 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to=xx
 
 -	Ocp-Apim-Subscription-Key :  this is the key to the service 
 
-![Param cognitive](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/param_cognitive.jpg)
+![Param cognitive](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/param_cognitive.jpg?raw=true)
 
 -	Content-Type : this is the extraction format, leave it as is
 -	Ocp-Apim-Subscription-Region : this is the region where you have deployed the service
@@ -39,19 +39,19 @@ Add the text to be translated to the body tab of postman :
 {"Text":" your text"}]
 }; 
 ```
-![Text translator](https://raw.githubusercontent.com/marc-hadjeje/marc-hadjeje.github.io/main/assets/images/text_translator.jpg)
+![Text translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/text_translator.jpg?raw=true)
 
 ######	you will see the translation in the body as a result
 
-![Translation result](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/translation_result.jpg)
+![Translation result](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/translation_result.jpg?raw=true)
 
 
 ###### 2st step, test postman with a translation “with own dictionary”
 
--	To create your company dictionary you need to log in to the portal: [postman](https://portal.customtranslator.azure.ai/workspaces))
+-	To create your company dictionary you need to log in to the portal: [postman](https://portal.customtranslator.azure.ai/workspaces)
 -	Create a new workspace and link it to your translator service with the same information as in the API call:
 
-![new project translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/new_project_translator.jpg)
+![new project translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/new_project_translator.jpg?raw=true)
 
 ######	Create new project with source language and target language and category ( it will be useful to call API with custom dictionary)
 
@@ -67,23 +67,21 @@ example: filename_en.TXT
 
 -	Train model with your dictionary document set , you will find kpis with the number for sentences ,   It can take a couple of time to train a new model.
 
- ![traim model translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/train_model.jpg)
+ ![traim model translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/train_model.jpg?raw=true)
  
 => Publish the model in the right region
 
- ![publish translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/publish_model2.jpg)
+ ![publish translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/publish_model2.jpg?raw=true)
 
 Once you have published the model, you can call the api by adding the categoryid you find in the published model
 
-```api
-// API code with syntax highlighting.
 https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=en&to=de&category=<category-Id>
-}; 
-```
+
+you will find category
 
 I replaced really by “tatata” in my dictionnary
 
 example :
  
-  ![Result translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/result.jpg)
+  ![Result translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/result.jpg?raw=true)
 
