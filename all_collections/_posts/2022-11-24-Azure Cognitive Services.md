@@ -46,7 +46,7 @@ Add the text to be translated to the body tab of postman :
 ![Translation result](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/translation_result.jpg?raw=true)
 
 
-###### 2st step, test postman with a translation “with own dictionary”
+##### 2.Test postman with a translation “with own dictionary”
 
 -	To create your company dictionary you need to log in to the portal customtranslator: [postman](https://portal.customtranslator.azure.ai/workspaces) which is an additional portal to the service allowing you to refine your translation
 
@@ -55,7 +55,6 @@ Add the text to be translated to the body tab of postman :
 ![new project translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/new_project_translator.jpg?raw=true)
 
 ######	Create new project with source language and target language and category ( it will be useful to call API with custom dictionary)
-
 
 -	Create document set in order to download Dictionnary set  ( you can choose Phrase Dictionnary or Sentence Dictionnary )  , please read the documentation to understand the difference.
 Respect the partern of the file name when uploading the dictionary 
