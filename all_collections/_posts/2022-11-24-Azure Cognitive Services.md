@@ -18,7 +18,7 @@ In this post we will quickly explain how to use the translation service but espe
 
 **https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=xx&to=xx**
 
-Replace the **xx** from the URL by the [language code](https://learn.microsoft.com/en-us/azure/cognitive-services/translator/language-support) of your choice,it is possible to directly detect the language to be translated by removing the **"from"** parameter.
+Replace the **xx** from the URL by the [language code](https://learn.microsoft.com/en-us/azure/cognitive-services/translator/language-support) of your choice,it is possible to directly detect the language to be translated by removing the **"from"** parameter:
 
 **https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to=xx**
 
@@ -27,7 +27,7 @@ Replace the **xx** from the URL by the [language code](https://learn.microsoft.c
 
 -	Ocp-Apim-Subscription-Key :  **this is the key to the service** 
 
-![Param cognitive](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/param_cognitive.jpg?raw=true)
+![Param cognitive](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/key_translator.jpg?raw=true)
 
 -	Content-Type : **this is the extraction format, leave it as is**
 -	Ocp-Apim-Subscription-Region : **this is the region where you have deployed the service**
@@ -41,14 +41,14 @@ Add the text to be translated to the body tab of postman :
 ```
 ![Text translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/text_translator.jpg?raw=true)
 
-######	you will see the translation in the body as a result
+-   You will see the translation in the body as a result
 
 ![Translation result](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/translation_result.jpg?raw=true)
 
 
-##### 2.Test postman with a translation “with own dictionary”
+##### 2.Test postman with a translation include your "own dictionary”
 
--	To create your company dictionary you need to log in to the portal customtranslator: [postman](https://portal.customtranslator.azure.ai/workspaces) which is an additional portal to the service allowing you to refine your translation
+-	To create your company dictionary you need to log in to the portal : [customtranslator](https://portal.customtranslator.azure.ai/workspaces) which is an additional portal to the service allowing you to refine your translation
 
 -	Create a new workspace and link it to your translator service with the same information as in the API call:
 
@@ -56,8 +56,7 @@ Add the text to be translated to the body tab of postman :
 
 ######	Create new project link to your ressource 
 
-
--	Create document set in order to download Dictionnary set  ( you can choose Phrase Dictionnary or Sentence Dictionnary )  , please read [the documentation](https://azure.microsoft.com/fr-fr/products/cognitive-services/)to understand the difference.
+-	Create document set in order to download Dictionnary set  ( you can choose Phrase Dictionnary or Sentence Dictionnary )  , please read [the documentation](https://learn.microsoft.com/en-us/azure/cognitive-services/Translator/custom-translator/concepts/dictionaries) to understand the difference.
 Respect the partern of the file name when uploading the dictionary 
 
 **example: filename_en.TXT**
