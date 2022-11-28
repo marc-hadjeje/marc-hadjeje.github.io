@@ -53,7 +53,7 @@ Add the text to be translated to the body tab of postman :
 
 ##### 2.Create custom translation project include your "own dictionary”
 
-After several translation tests my customer would like to add his own translation on certain words because he considered that the translation of the service was not the best choice in the target language of his choice or wanted to add vocabularies specific to his company.  
+After several translation tests my customer would like to add his own translation on certain words because he considered that the translation of the service was not the best in the target language to be translated or wanted to add vocabularies specific to his company.  
 
 -	To create your company dictionary you need to log in to the portal : [custom translator](https://portal.customtranslator.azure.ai/workspaces) which is an additional portal to the service allowing you to refine your translation.
 
@@ -94,6 +94,6 @@ Now you can use the API below by adding the categoryid corresponding to your cus
 **https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to=xx&category=category-Id**
 
 
-In my example below I am translating from English into Chinese Traditional and add category-id to add custom dictionnary to the translation:
+In my example below I am translating from Chinese Traditional into English and add category-id to add custom dictionnary to the translation:
 
  ![traim model final result](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/result_custom_traduction.jpg?raw=true)
