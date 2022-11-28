@@ -51,7 +51,7 @@ Add the text to be translated to the body tab of postman :
 
 ##### 2.Create custom translation project include your "own dictionary”
 
--	To create your company dictionary you need to log in to the portal : [customtranslator](https://portal.customtranslator.azure.ai/workspaces) which is an additional portal to the service allowing you to refine your translation.
+-	To create your company dictionary you need to log in to the portal : [custom translator](https://portal.customtranslator.azure.ai/workspaces) which is an additional portal to the service allowing you to refine your translation.
 
 -	Create a new workspace and link it to your translator ressource with the same information as in the API call:
 
@@ -69,7 +69,7 @@ Add the text to be translated to the body tab of postman :
 
 **example: filename_en.TXT**
 
--  You have to upload 2 files the text to be translated and the expected translation
+-  You have to upload 2 files : the text to be translated and the expected translation
 
 ![new translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/content%20custom%20dictionnary.jpg?raw=true)
 
