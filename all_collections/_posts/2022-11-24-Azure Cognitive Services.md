@@ -32,6 +32,9 @@ Replace the **xx** from the URL by the [language code](https://learn.microsoft.c
 -	Content-Type : **this is the extraction format, leave it as is**
 -	Ocp-Apim-Subscription-Region : **this is the region where you have deployed the service**
 
+![Param cognitive](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/param_cognitive.jpg?raw=true)
+
+
 Add the text to be translated to the body tab of postman :
 
 ```api
