@@ -29,7 +29,7 @@ Replace the **xx** from the URL by the [language code](https://learn.microsoft.c
 
 ![Param cognitive](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/key_translator.jpg?raw=true)
 
--	Content-Type : **this is the extraction format, leave it as is**
+-	Content-Type : **this is the extraction format, for example "application/json"**
 -	Ocp-Apim-Subscription-Region : **this is the region where you have deployed the service**
 
 ![Param cognitive](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/param_cognitive.jpg?raw=true)
@@ -65,7 +65,11 @@ Add the text to be translated to the body tab of postman :
 
 -	Create document set in order to download Dictionnary set  ( you can choose Phrase Dictionnary or Sentence Dictionnary )  , please read [the documentation](https://learn.microsoft.com/en-us/azure/cognitive-services/Translator/custom-translator/concepts/dictionaries) to understand the difference.
 
+![new project translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/type_of_dictionnary.jpg?raw=true)
+
 -   Upload you custom traduction :
+
+![new project translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/custom_translator_key.jpg?raw=true)
 
 **Respect the partern of the file name when uploading the dictionary** 
 
