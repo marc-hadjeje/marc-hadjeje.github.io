@@ -61,7 +61,7 @@ Add the text to be translated to the body tab of postman :
 
 ![new project dico](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/new_project_translator.jpg?raw=true)
 
--	Create document set in order to download Dictionnary set  ( you can choose Phrase Dictionnary or Sentence Dictionnary )  , please read [the documentation](https://learn.microsoft.com/en-us/azure/cognitive-services/Translator/custom-translator/concepts/dictionaries) to understand the difference.
+-	Create document set in order to download Dictionnary set (you can choose Phrase Dictionnary or Sentence Dictionnary), please read [the documentation](https://learn.microsoft.com/en-us/azure/cognitive-services/Translator/custom-translator/concepts/dictionaries) to understand the difference.
 
 ![new type of dico](https://raw.githubusercontent.com/marc-hadjeje/marc-hadjeje.github.io/main/assets/images/type_of_dictionnary.jpg)
 
