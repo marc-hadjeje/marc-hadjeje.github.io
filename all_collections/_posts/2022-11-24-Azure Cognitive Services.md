@@ -44,7 +44,7 @@ Add the text to be translated to the body tab of postman :
 ```
 ![Text translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/text_translator.jpg?raw=true)
 
--   In the example below I am translating from English into Chinese Traditional, the API has detected the language to be translated directly and you can see the translation in the body as a result:
+-   In my example below I am translating from English into Chinese Traditional, the API has detected the language to be translated directly and you can see the translation in the body as a result:
 
 **https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to=zh-Hant**
 
