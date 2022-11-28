@@ -10,7 +10,7 @@ In this post we will quickly explain how to use the translation service but espe
 
 ##### 1.Creation of the service Cognitives | Translator Ressource 
 
-![Text translator](https://raw.githubusercontent.com/marc-hadjeje/marc-hadjeje.github.io/main/assets/images/text_translator.jpg)
+![Text translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/Translator_creation.jpg?raw=true)
 
 ###### Test the service with postman and call the API 
 
@@ -22,14 +22,12 @@ In this post we will quickly explain how to use the translation service but espe
 
 https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to=xx
 
-![Text translator](https://raw.githubusercontent.com/marc-hadjeje/marc-hadjeje.github.io/main/assets/images/text_translator.jpg)
-
 
 ###### Add in the header when calling the API the 3 parameters concerning your cognitive services
 
 -	Ocp-Apim-Subscription-Key :  this is the key to the service 
 
-![Text translator](https://raw.githubusercontent.com/marc-hadjeje/marc-hadjeje.github.io/main/assets/images/text_translator.jpg)
+![Text translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/publish_model2.jpg)
 
 -	Content-Type : this is the extraction format, leave it as is
 -	Ocp-Apim-Subscription-Region : this is the region where you have deployed the service
