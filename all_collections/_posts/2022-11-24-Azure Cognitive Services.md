@@ -16,11 +16,11 @@ In this post we will quickly explain how to use the translation service but espe
 
 -	Use the following url by creating a new request "Post": 
 
- https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=xx&to=xx
+**https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&from=xx&to=xx**
 
  Or it is possible to directly detect the language to be translated by removing the "from" parameter
 
-https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to=xx
+**https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to=xx**
 
 
 ###### Add in the header when calling the API the 3 parameters concerning your cognitive services
@@ -29,8 +29,8 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to=xx
 
 ![Param cognitive](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/param_cognitive.jpg?raw=true)
 
--	Content-Type : this is the extraction format, leave it as is
--	Ocp-Apim-Subscription-Region : this is the region where you have deployed the service
+-	Content-Type : **this is the extraction format, leave it as is**
+-	Ocp-Apim-Subscription-Region : **this is the region where you have deployed the service**
 
 Add the text to be translated to the body tab of postman :
 
@@ -54,12 +54,13 @@ Add the text to be translated to the body tab of postman :
 
 ![new project translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/new_project_translator.jpg?raw=true)
 
-######	Create new project with source language and target language and category ( it will be useful to call API with custom dictionary)
+######	Create new project link to your ressource 
 
--	Create document set in order to download Dictionnary set  ( you can choose Phrase Dictionnary or Sentence Dictionnary )  , please read the documentation to understand the difference.
+
+-	Create document set in order to download Dictionnary set  ( you can choose Phrase Dictionnary or Sentence Dictionnary )  , please read [the documentation](https://azure.microsoft.com/fr-fr/products/cognitive-services/)to understand the difference.
 Respect the partern of the file name when uploading the dictionary 
-example: filename_en.TXT
 
+**example: filename_en.TXT**
 
 ![new translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/new_project_translator.jpg)
 
