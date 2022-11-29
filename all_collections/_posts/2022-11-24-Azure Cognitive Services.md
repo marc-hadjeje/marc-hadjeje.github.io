@@ -5,7 +5,7 @@ date: 2022-11-23
 categories: [AI,Cognitives Service, Translator,Custom Dictionnary,1st post]
 ---
 
-For my first post, I'm interested in AI topics that I had to set up for a customer via the usage of Translator which is part of the [Azure Cognitive services](https://azure.microsoft.com/fr-fr/products/cognitive-services/) on Azure.In a simple way it's a tool that allows you to translate your texts. It's easy to use, it lets you to integrate it into your backoffice to translate your texts with a lot of sample code allowing you to accelerate your development and you can test it quite easily through the Azure portal or via APIs (in my post via [postman](https://www.postman.com/)).There is a lot of documentation on this service, however it is possible to improve the translations that Microsoft offers, using an additional portal called [custom translator](https://portal.customtranslator.azure.ai/) to refine your translation for example train your model of translation or by the addition of a [custom dictionary](https://learn.microsoft.com/en-us/azure/cognitive-services/translator/custom-translator/concepts/dictionaries) enabling you to add business vocabulary.
+For my first post, I'm interested in AI topics that I had to set up for a customer via the usage of Translator which is part of the [Azure Cognitive services](https://azure.microsoft.com/fr-fr/products/cognitive-services/) on Azure.In a simple way it's a tool that allows you to translate your texts. It's easy to use, it help you to integrate it into your backoffice to translate your texts with a lot of sample code allowing you to accelerate your development.You can test it quite easily through the Azure portal or via APIs (in my post via [postman](https://www.postman.com/)).There is a lot of documentation on this service, however it is possible to improve the translations that Microsoft offers, using an additional portal called [custom translator](https://portal.customtranslator.azure.ai/) to refine your translation.For example, train your model of translation or by the addition of a [custom dictionary](https://learn.microsoft.com/en-us/azure/cognitive-services/translator/custom-translator/concepts/dictionaries) enabling you to add business vocabulary.
 In this post we will briefly explain how to use the translation service but especially the usage of custom translator via the addition of custom dictionary.
 
 ##### 1.Creation of the service Cognitives | Translator Ressource 
@@ -53,9 +53,9 @@ Add the text to be translated to the body tab of postman :
 
 ##### 2.Create custom translation project include your "own dictionary”
 
-After several translation tests my customer would like to add his own translation on certain words because he considered that the translation of the service was not always the best in the target language to be translated or wanted to add vocabularies specific to his company.  
+After several translation tests my customer would like to add his own translation on certain words, because he considered that the translation of the service was not always the best or wanted to add specific vocabulary from his company.  
 
--	To create your company dictionary you need to log in to the portal : [custom translator](https://portal.customtranslator.azure.ai/workspaces) which is an additional portal to the service allowing you to refine your translation.
+-	To create your company dictionary you need to log in to the portal : [custom translator](https://portal.customtranslator.azure.ai/workspaces) which is an additional portal to the service allowing you to improve your translation.
 
 -	Create a new workspace and link it to your translator ressource with the same information as in the API call:
 
@@ -65,7 +65,7 @@ After several translation tests my customer would like to add his own translatio
 
 ![new project dico](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/new_project_translator.jpg?raw=true)
 
--	Create document set in order to download Dictionary set (you can choose Phrase Dictionary or Sentence Dictionary), please read [the documentation](https://learn.microsoft.com/en-us/azure/cognitive-services/Translator/custom-translator/concepts/dictionaries) to understand the difference.
+-	Create a document set in order to download Dictionary set (you can choose Phrase Dictionary or Sentence Dictionary), please read [the documentation](https://learn.microsoft.com/en-us/azure/cognitive-services/Translator/custom-translator/concepts/dictionaries) to understand the difference.
 
 ![new type of dico](https://raw.githubusercontent.com/marc-hadjeje/marc-hadjeje.github.io/main/assets/images/type_of_dictionnary.jpg)
 
@@ -77,7 +77,7 @@ After several translation tests my customer would like to add his own translatio
 
 ![new translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/content%20custom%20dictionnary.jpg?raw=true)
 
--	Train model with your dictionary document set, you will find kpis with the number for sentences,It can take a couple of time to train a new model.
+-	Train model with your dictionary document set, you will find informations with the number for sentences,It can take a couple of time to train a new model.
 
  ![traim model translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/train_model.jpg?raw=true)
  
@@ -85,7 +85,7 @@ After several translation tests my customer would like to add his own translatio
 
  ![publish translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/publish_model2.jpg?raw=true)
 
-Once you have published the model, you can call the api by adding the categoryid you find in the published model :
+Once you have published the model, you can call the api by adding the categoryid you will find in the published model :
 
  ![traim model translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/category_id.jpg?raw=true)
 
