@@ -51,11 +51,11 @@ Add the text to be translated to the body tab of postman :
 ![Translation result](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/translation_result.jpg?raw=true)
 
 
-##### 2.Create custom translation project include your "own dictionary”
+##### 2.Create custom translation project that includes your "own dictionary”
 
 After several translation tests my customer would like to add his own translation on certain words, because he considered that the translation of the service was not always the best or wanted to add specific vocabulary from his company.  
 
--	To create your company dictionary you need to log in to the portal : [custom translator](https://portal.customtranslator.azure.ai/workspaces){:target="_blank"} which is an additional portal to the service allowing you to improve your translation.
+-	To create your company dictionary you need to log in to into the portal : [custom translator](https://portal.customtranslator.azure.ai/workspaces){:target="_blank"} which is an additional portal to the service allowing you to improve your translation.
 
 -	Create a new workspace and link it to your translator ressource with the same information as in the API call:
 
@@ -77,7 +77,7 @@ After several translation tests my customer would like to add his own translatio
 
 ![new translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/content%20custom%20dictionnary.jpg?raw=true)
 
--	Train model with your dictionary document set, you will find informations with the number for sentences,It can take a couple of time to train a new model.
+-	Train model with your dictionary document set, you will find some information with the number for sentences,It can take a couple of times to train a new model.
 
  ![traim model translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/train_model.jpg?raw=true)
  
@@ -89,7 +89,7 @@ Once you have published the model, you can call the api by adding the categoryid
 
  ![traim model translator](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/category_id.jpg?raw=true)
 
-Now you can use the API below by adding the categoryid corresponding to your custom dictionary (with the same source and target langage in the url of your API) and you will see your custom translation !
+Now you can use the API below by adding the categoryid corresponding to your custom dictionary (with the same source and target language in the url of your API) and you will see your custom translation !
 
 **https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to=xx&category=category-Id**
 
