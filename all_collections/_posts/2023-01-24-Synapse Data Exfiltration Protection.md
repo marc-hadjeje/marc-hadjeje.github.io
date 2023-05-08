@@ -1,20 +1,11 @@
 ---
 layout: post
 title: Synapse security 
-date: 2023-05-10
+date: 2022-11-23
 categories: [DATA,Synapse, Security]
 ---
-For my second post, I'm going to focus on a subject that is of major concern to many of my clients, data security inside their Data platform.
-Beyond the network security aspects, what preoccupies companies are the aspects around data exfiltration which is a very considered threat by the security team.
-We will address this topic through the usage of Microsoft Synapse, the Microsoft data platform.
-Before briefly presenting the Synapse architecture and the possible protection capabilities, you will find below the definition of what is data exfiltration:
-Data exfiltration, aka data leakage, aka data extrusion, occurs when sensitive data is exfiltrated to locations outside of an organization.
-In fact, there are two types of data exfiltration threats: attacks from outside the organization, and malicious insiders stealing their organization.
-In the public cloud business, data exfiltration usually stands for the second scenario: a malicious insider, who has legitimate access to sensitive data, is exfiltrating it to locations outside of the organization.
 
-# Presentation de synapse 
-
-Azure Synapse is an enterprise analytics service that accelerates time to insight across data warehouses and big data systems. Azure Synapse brings together the best of SQL technologies used in enterprise data warehousing, Spark technologies used for big data, Data Explorer for log and time series analytics, Pipelines for data integration and ETL/ELT, and deep integration with other Azure services such as Power BI, CosmosDB, and AzureML.
+# Creation of the service Cognitives Service
 
 **1st step, test postman with translation _without the dictionary_**
 
