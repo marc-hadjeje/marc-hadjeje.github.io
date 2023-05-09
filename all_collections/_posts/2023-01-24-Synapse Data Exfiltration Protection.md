@@ -4,7 +4,7 @@ title: Synapse Analytics Data Exfiltration Protection
 date: 2023-05-10
 categories: [Data,Synapse, Security]
 ---
-For my second post, I'm going to focus on a subject that is of major concern to many of my clients, data security inside their Data platform.
+For my 2nd post, I'm going to focus on a subject that is of major concern to many of my clients, data security inside their Data platform.
 Beyond the network security aspects, what preoccupies companies are the aspects around data exfiltration which is a very considered threat by the security team.
 We will address this topic through the usage of [Azure Synapse Analytics](https://azure.microsoft.com/en-us/products/synapse-analytics/){:target="_blank"},the Microsoft data platform.
 Before briefly presenting the Synapse architecture and the possible protection capabilities, you will find below the definition of what is Data Exfiltration:
