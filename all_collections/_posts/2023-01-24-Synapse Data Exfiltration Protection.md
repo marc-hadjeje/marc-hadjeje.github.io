@@ -2,7 +2,7 @@
 layout: post
 title: Azure Synapse Analytics Data Exfiltration  
 date: 2023-11-23
-categories: [Data,Synapse, Security]
+categories: ["Data","Synapse", "Security"]
 ---
 
 # Creation of the service Cognitives Service
