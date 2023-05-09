@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Synapse Analytics DEP
-date: "2023-01-01"
+date: "2023-05-09"
 categories: ["jekyll", "Test Post", "first post"]
 ---
 
