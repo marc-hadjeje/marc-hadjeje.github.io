@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Synapse Analytics DEP
+title: Synapse Analytics Data Exfiltration Proctection
 date: "2023-05-09"
 categories: ["Data", "Analytics", "Security"]
 ---
