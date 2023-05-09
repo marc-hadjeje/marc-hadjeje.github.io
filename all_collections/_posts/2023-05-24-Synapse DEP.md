@@ -2,7 +2,7 @@
 layout: post
 title: Azure Synapse Analytics 
 date: 2023-05-23
-categories: [AI,Cognitives Service, Translator,Custom Dictionnary,1st post]
+categories: ["DATA"]
 ---
 
 For my first post, I'm interested in AI topics that I had to set up for a customer via the usage of Translator which is part of the [Azure Cognitive services](https://azure.microsoft.com/fr-fr/products/cognitive-services/){:target="_blank"} on Azure.In a simple way it's a tool that allows you to translate your texts. It's easy to use, it help you to integrate it into your backoffice to translate your texts with a lot of sample code allowing you to accelerate your development.You can test it quite easily through the Azure portal or via APIs (in my post via [postman](https://www.postman.com/){:target="_blank"}).There is a lot of documentation on this service, however it is possible to improve the translations that Microsoft offers, using an additional portal called [custom translator](https://portal.customtranslator.azure.ai/){:target="_blank"} to refine your translation.For example, train your model of translation or by the addition of a [custom dictionary](https://learn.microsoft.com/en-us/azure/cognitive-services/translator/custom-translator/concepts/dictionaries){:target="_blank"} enabling you to add business vocabulary.
