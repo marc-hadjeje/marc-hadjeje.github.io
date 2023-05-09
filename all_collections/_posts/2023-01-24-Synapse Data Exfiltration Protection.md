@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Azure Synapse Analytics Data Exfiltration protection 
-date: 2023-05-23
+title: Azure Synapse Analytics Data Exfiltration  
+date: 2023-11-23
 categories: [Data,Synapse, Security]
 ---
 
