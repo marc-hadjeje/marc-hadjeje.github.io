@@ -1,17 +1,9 @@
 ---
 layout: post
-title: Synapse Analytics Data Exfiltration Protection 
-date: 2023-05-10
+title: Azure Synapse Analytics Data Exfiltration protection 
+date: 2023-05-23
 categories: [Data,Synapse, Security]
 ---
-For my 2nd post, I'm going to focus on a subject that is of major concern to many of my clients, data security inside their Data platform.
-Beyond the network security aspects, what preoccupies companies are the aspects around data exfiltration which is a very considered threat by the security team.
-We will address this topic through the usage of [Azure Synapse Analytics](https://azure.microsoft.com/en-us/products/synapse-analytics/){:target="_blank"},the Microsoft data platform.
-Before briefly presenting the Synapse architecture and the possible protection capabilities, you will find below the definition of what is Data Exfiltration:
-	Data exfiltration, aka data leakage, aka data extrusion, occurs when sensitive data is exfiltrated to locations outside of an organization.
-In fact, there are two types of data exfiltration threats: attacks from outside the organization, and malicious insiders stealing their organization.
-In the public cloud business, data exfiltration usually stands for the second scenario: a malicious insider, who has legitimate access to sensitive data, is exfiltrating it to locations outside of the organization.
-
 
 # Creation of the service Cognitives Service
 
