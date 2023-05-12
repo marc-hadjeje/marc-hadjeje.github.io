@@ -30,6 +30,6 @@ To provide more detail, the Synapse managed workspace will be hosted in Microsof
 ![Synapse Managed Vnet Option](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/managed_vnet.jpg?raw=true)
 It is possible to connect other data sources to your Managed Synapse workspace through the managed private end.
 ![Synapse Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/managed_vnet_integration.jpg?raw=true)
-##### Data Exfiltration scénario
+##### Data Exfiltration scenario
 ![Synapse Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/DEP1.jpg?raw=true)
 ![Synapse Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/DEP1.jpg?raw=true)
