@@ -28,5 +28,8 @@ New approach for data services is using Managed VNet for most Azure Data product
 ![Synapse Managed Vnet](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/azure-synapse-analytics-networking-managed-virtual-network-outbound-traffic.png?raw=true)
 To provide more detail, the Synapse managed workspace will be hosted in Microsoft Azure subscriptions managed by MS engineering.
 ![Synapse Managed Vnet Option](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/managed_vnet.jpg?raw=true)
-It is possible to connect other data sources to your workspace through the managed private end.
+It is possible to connect other data sources to your Managed Synapse workspace through the managed private end.
 ![Synapse Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/managed_vnet_integration.jpg?raw=true)
+##### Data Exfiltration scénario
+![Synapse Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/DEP1.jpg?raw=true)
+![Synapse Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/DEP1.jpg?raw=true)
