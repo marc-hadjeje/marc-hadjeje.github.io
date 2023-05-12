@@ -20,6 +20,6 @@ Historical ways to address the data leakage risk:
 - Using Azure Firewall in a hub & spoke architecture
 - Azure Private Endpoints
 - Azure Service Endpoint Policies		
-				
-New approach for data services is using Managed VNet:
-- Power BI, Data factory, Synapse, Purview, Azure ML
+##### Azure Synapse Analytics Managed Virtual Network		
+New approach for data services is using Managed VNet for most Azure Data products like Power BI, Data factory, Purview, Azure ML.
+When you create your Azure Synapse workspace, you can choose to associate it to a Microsoft Azure Virtual Network. The Virtual Network associated with your workspace is managed by Azure Synapse.
