@@ -25,7 +25,9 @@ Historical ways to address the data leakage risk in for Azure ressources:
 
 New approach for data services is using Managed VNet for most Azure Data products like **Power BI**, **Data factory**, **Purview**, **Azure ML**.
 - When you create your Azure Synapse workspace, you can choose to associate it to a Microsoft Azure Virtual Network. The Virtual Network associated with your workspace is managed by Azure Synapse.
-![Synapse Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/azure-synapse-analytics-networking-managed-virtual-network-outbound-traffic.png?raw=true)
+![Synapse Managed Vnet](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/azure-synapse-analytics-networking-managed-virtual-network-outbound-traffic.png?raw=true)
 To provide more detail, the Synapse managed workspace will be hosted in Microsoft Azure subscriptions managed by MS engineering.
+![Synapse Managed Vnet Option](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/managed_vnet.jpg?raw=true)
+It is possible to connect other data sources to your workspace through the managed private end.
 ![Synapse Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/managed_vnet.jpg?raw=true)
 
