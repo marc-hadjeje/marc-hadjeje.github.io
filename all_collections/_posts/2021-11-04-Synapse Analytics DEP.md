@@ -6,7 +6,7 @@ categories: ["Data", "Analytics", "Security"]
 ---
 For my second post, I'm going to focus on a subject that is of major concern to many of my customers, data security inside their Data platform.
 
-Beyond the network security aspects, what preoccupies companies are the aspects around data exfiltration which is a very considered threat by the security team.We will address this topic through the usage of [Synapse Analytics](https://azure.microsoft.com/en-us/products/synapse-analytics/){:target="_blank"},an enterprise analytics service.
+Beyond the network security aspects, what preoccupies companies are the aspects around data exfiltration which is a very considered threat by the security team.We will address this topic through the usage of [Azure Synapse Analytics](https://portal.customtranslator.azure.ai/){:target="_blank"},an enterprise analytics service.
 
 Before briefly presenting the Synapse architecture and the possible protection capabilities, you will find below the definition of what is data exfiltration:
 - Data exfiltration, aka data leakage, aka data extrusion, occurs when sensitive data is exfiltrated to locations outside of an 
@@ -35,7 +35,7 @@ In order to secure your storage account, which must have public access so that S
 The diagrams below show some possible scenarios for data exfiltration, and we'll look at how we can respond next. 
 ![Synapse Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/DEP1.jpg?raw=true)
 ![Synapse Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/DEP1.jpg?raw=true)
-To tackle these data exfiltration scenarios, there is a feature [Data Exfiltration Protection](https://azure.microsoft.com/en-us/products/synapse-analytics/){:target="_blank"} that enables additional restrictions on the ability of Azure Synapse Analytics to connect to other services – enabling you to further secure your Azure Synapse Analytics deployment. There are a couple of key things to know about DEP:
+To tackle these data exfiltration scenarios, there is a feature [Data Exfiltration Protection](https://portal.customtranslator.azure.ai/){:target="_blank"} that enables additional restrictions on the ability of Azure Synapse Analytics to connect to other services – enabling you to further secure your Azure Synapse Analytics deployment. There are a couple of key things to know about DEP:
 - DEP can only be enabled at Azure Synapse Analytics workspace creation and cannot be disabled at a later point. If you want to disable DEP, you will have to create a new Azure Synapse Analytics workspace and migrate all artifacts.
   
 - DEP enables you to limit the communication from Azure Synapse Analytics. By requiring connections to other services to use managed private endpoints and to approved Azure AD tenants.
