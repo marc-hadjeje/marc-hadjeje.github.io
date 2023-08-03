@@ -29,6 +29,8 @@ To provide more detail, the Synapse managed workspace will be hosted in Microsof
 ![Synapse Managed Vnet Option](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/managed_vnet.jpg?raw=true)
 It is possible to connect other data sources to your Managed Synapse workspace through the managed private end point.
 ![Synapse Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/managed_vnet_integration.jpg?raw=true)
+In order to secure your storage account, which must have public access so that Synapse engines can access it, in particular SQL Serverless, you need to configure the resource instances associated with your Synapse workspace in the "Security + networking" section of the storage account to Specify resource instances that will have access to your storage account based on their system-assigned managed identity.
+![Synapse Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/Ressource_Instance.jpg?raw=true)
 ##### Data Exfiltration scenario
 ![Synapse Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/DEP1.jpg?raw=true)
 ![Synapse Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/DEP1.jpg?raw=true)
