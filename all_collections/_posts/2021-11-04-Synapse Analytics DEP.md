@@ -34,8 +34,7 @@ In order to secure your storage account, which must have public access so that S
 The resource instances need to be associated with your Synapse workspace in the "Security + networking" section of the storage account to Specify resource instances that will have access to your storage account based on their system-assigned managed identity.
 ![Synapse Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/Ressource_Instance.jpg?raw=true)
 ##### Data Exfiltration scenario
-The diagrams below show some possible scenarios for data exfiltration, and we'll look at how we can respond next. 
-![Synapse Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/DEP1.jpg?raw=true)
+The diagrams below show possible scenario for data exfiltration, and we'll look at how we can respond next. 
 ![Synapse Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/DEP1.jpg?raw=true)
 To tackle these data exfiltration scenarios, there is a feature [Data Exfiltration Protection](https://learn.microsoft.com/en-us/azure/synapse-analytics/security/workspace-data-exfiltration-protection){:target="_blank"} (DEP) that enables additional restrictions on the ability of Azure Synapse Analytics to connect to other services – enabling you to further secure your Azure Synapse Analytics deployment. There are a couple of key things to know about DEP:
 - DEP can only be enabled at Azure Synapse Analytics workspace creation and cannot be disabled at a later point. If you want to disable DEP, you will have to create a new Azure Synapse Analytics workspace and migrate all artifacts.
