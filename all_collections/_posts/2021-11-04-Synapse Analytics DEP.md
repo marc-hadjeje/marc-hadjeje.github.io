@@ -32,9 +32,10 @@ It is possible to connect other data sources to your Managed Synapse workspace t
 In order to secure your storage account, which must have public access so that Synapse engines can access it, in particular SQL Serverless, you need to configure the resource instances associated with your Synapse workspace in the "Security + networking" section of the storage account to Specify resource instances that will have access to your storage account based on their system-assigned managed identity.
 ![Synapse Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/Ressource_Instance.jpg?raw=true)
 ##### Data Exfiltration scenario
+The diagrams below show some possible scenarios for data exfiltration, and we'll look at how we can respond next. 
 ![Synapse Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/DEP1.jpg?raw=true)
 ![Synapse Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/DEP1.jpg?raw=true)
-Data Exfiltration Protection (DEP) is a feature that enables additional restrictions on the ability of Azure Synapse Analytics to connect to other services – enabling you to further secure your Azure Synapse Analytics deployment. There are a couple of key things to know about DEP:
+To tackle these data exfiltration scenarios, there is a feature Data Exfiltration Protection that enables additional restrictions on the ability of Azure Synapse Analytics to connect to other services – enabling you to further secure your Azure Synapse Analytics deployment. There are a couple of key things to know about DEP:
 - DEP can only be enabled at Azure Synapse Analytics workspace creation and cannot be disabled at a later point. If you want to disable DEP, you will have to create a new Azure Synapse Analytics workspace and migrate all artifacts.
 - DEP enables you to limit the communication from Azure Synapse Analytics. By requiring connections to other services to use managed private endpoints and to approved Azure AD tenants.
 - DEP applies to all services within an Azure workspace including dedicated SQL pools, serverless SQL pools, Apache Spark pools and Pipelines.
