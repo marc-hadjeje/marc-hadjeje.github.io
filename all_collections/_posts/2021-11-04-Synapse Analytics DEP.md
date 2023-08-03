@@ -34,10 +34,8 @@ In order to secure your storage account, which must have public access so that S
 ##### Data Exfiltration scenario
 ![Synapse Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/DEP1.jpg?raw=true)
 ![Synapse Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/DEP1.jpg?raw=true)
-
 Data Exfiltration Protection (DEP) is a feature that enables additional restrictions on the ability of Azure Synapse Analytics to connect to other services – enabling you to further secure your Azure Synapse Analytics deployment. There are a couple of key things to know about DEP:
 - DEP can only be enabled at Azure Synapse Analytics workspace creation and cannot be disabled at a later point. If you want to disable DEP, you will have to create a new Azure Synapse Analytics workspace and migrate all artifacts.
 - DEP enables you to limit the communication from Azure Synapse Analytics. By requiring connections to other services to use managed private endpoints and to approved Azure AD tenants.
 - DEP applies to all services within an Azure workspace including dedicated SQL pools, serverless SQL pools, Apache Spark pools and Pipelines.
-- ![Synapse Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/Synapse-DEP.jpg?raw=true)
- 
+![Synapse Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/Synapse-DEP.jpg?raw=true)
