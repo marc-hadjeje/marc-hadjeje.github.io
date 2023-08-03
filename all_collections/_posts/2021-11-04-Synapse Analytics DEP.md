@@ -41,5 +41,5 @@ To tackle these data exfiltration scenarios, there is a feature [Data Exfiltrati
 - DEP enables you to limit the communication from Azure Synapse Analytics. By requiring connections to other services to use managed private endpoints and to approved Azure AD tenants.
 - DEP applies to all services within an Azure workspace including dedicated SQL pools, serverless SQL pools, Apache Spark pools and Pipelines.
 
-As mentioned below, via the DEP feature it will now be impossible for a user to exfiltrate data from the datalake to an external storage account via the SQL Serverless pool, for example.
+As mentioned below, via the DEP feature it will now be impossible for a user to exfiltrate data from the Enterprise datalake to an external storage account via the SQL Serverless pool.
 ![Synapse Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/Synapse-DEP.jpg?raw=true)
