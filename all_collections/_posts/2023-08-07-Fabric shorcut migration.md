@@ -37,7 +37,7 @@ Before you start, you need to create a Fabric capacity in trial version using th
 5.  Select External sources (for me ADLS G2) => this ressource need to be located in the same region than your lakehouse / the link must be the DFS endpoint for the storage account.
 ![New shortcut adlsg2](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/shortcutadlsg.jpg?raw=true)
 This is the tree structure of your datalake
-![New shortcut adlsg2 list](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/shortcutlist.jpg?raw=true)
+![New shortcut adlsg2 list](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/shortcutlists.jpg?raw=true)
 Note that if you already have your data in Delta format you can use the managed tables, otherwise you will need to mount your files and generate the Delta format files from the parquet files in your datalake.
 ![New shortcut mount table](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/MountTable.jpg?raw=true)
 6. Notebooks can be used to programmatically mount all your parquet files in delta format and make them available on the table.
