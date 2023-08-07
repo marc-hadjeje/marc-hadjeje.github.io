@@ -39,10 +39,10 @@ Before you start, you need to create a Fabric capacity in trial version using th
 This is the tree structure of your datalake
 ![New shortcut adlsg2 list](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/shortcutlist.jpg?raw=true)
 Note that if you already have your data in Delta format you can use the managed tables, otherwise you will need to mount your files and generate the Delta format files from the parquet files in your datalake.
-![New shortcut mount table](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/MountTable.jpg.jpg?raw=true)
-Notebooks can be used to programmatically mount all your parquet files in delta format and make them available on the table.
-![New shortcut notebook](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/notebooks.jpg.jpg?raw=true)
+![New shortcut mount table](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/MountTable.jpg?raw=true)
+6. Notebooks can be used to programmatically mount all your parquet files in delta format and make them available on the table.
+![New shortcut notebook](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/notebooks.jpg?raw=true)
 Here is the parquet file in table format with the available columns
-![New shortcut table structure](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/fact_tables.jpg.jpg?raw=true)
+![New shortcut table structure](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/fact_tables.jpg?raw=true)
 You can then make the most of your data, including the option of using Direct Lake with PowerBI and delta tables.
 ![New shortcut table structure](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/directlake-diagram.jpg?raw=true)
