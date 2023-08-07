@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Leverage your data with Microsoft Fabric
+title: Leverage your data assets with Microsoft Fabric
 date: "2023-08-07"
 categories: ["Data", "Fabric", "Shortcut"]
 ---
