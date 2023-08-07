@@ -34,7 +34,7 @@ Before you start, you need to create a Fabric capacity in trial version using th
 - You already have Delta files in your datalake, create the shortcut from the Tables folder
 - You have parquet files create the shortcut from the Files folder
 ![Creation shortcut](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/shortcut_creation.jpg?raw=true)
-4.	Select External sources (for me ADLS G2)
+4.	Select External sources (here will be ADLS G2)
 ![New shortcut](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/new_shortcut.jpg?raw=true)
 5.  The External ADLS G2 need to be located in the same region than your lakehouse / the link must be the DFS endpoint for the storage account.
 ![New shortcut adlsg2](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/shortcutadlsg.jpg?raw=true)
