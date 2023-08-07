@@ -9,7 +9,7 @@ categories: ["Data", "Fabric", "Shortcut"]
 
 For my first post about [Microsoft Fabric](https://www.microsoft.com/en-gb/microsoft-fabric/){:target="_blank"} the unified analytics solution of Microsoft,I'd like to raise an initial topic of migration path for customers.
 The migration scenario to study involves taking over the existing services of customers who currently use managed data services on Azure to use Spark such as [Microsoft HDInsight](https://azure.microsoft.com/en-gb/products/hdinsight/){:target="_blank"} or [Azure Synapse Analytics](https://learn.microsoft.com/en-us/azure/synapse-analytics/overview-what-is){:target="_blank"}, using the Spark engine to process their data and obviously associating the storage layer via [Azure Data Lake Storage Gen2](https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction){:target="_blank"} for their datalake.
-It is also possible to take advantage of its data with Fabric in multi-cloud scenarios, where it is possible to point to data from GCP or AWS.
+It is also possible to take advantage of its data with Fabric in multi-cloud scenarios, where it is possible to "shortcut" data from GCP or AWS.
 
 To store the data, [Parquet file](http://parquet.incubator.apache.org){:target="_blank"} is often the preferred format for storing data because is a columnar format that is supported by many other data processing systems for reading and writing.
 Microsoft's Fabric promise is to enable its customers to leverage the data assets they already have in place in order to migrate to new fabric service offering new features.
