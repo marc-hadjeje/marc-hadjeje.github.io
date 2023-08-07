@@ -4,7 +4,7 @@ title: Leverage your data with Microsoft Fabric
 date: "2023-08-07"
 categories: ["Data", "Fabric", "Shortcut"]
 ---
-**Microsofr Fabric is currently in public preview**
+**Microsoft Fabric is currently in public preview**
 
 
 For my first post about [Microsoft Fabric](https://www.microsoft.com/en-gb/microsoft-fabric/){:target="_blank"} the unified analytics solution of Microsoft,I'd like to raise an initial topic of migration path for customers.
