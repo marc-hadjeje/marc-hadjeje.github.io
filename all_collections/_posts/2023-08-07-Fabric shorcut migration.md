@@ -4,7 +4,7 @@ title: Leverage your data with Microsoft Fabric
 date: "2023-08-07"
 categories: ["Data", "Fabric", "Shortcut"]
 ---
-For my first post about [Microsoft Fabric](https://www.microsoft.com/en-gb/microsoft-fabric/){:target="_blank"} the unified analytics solution of Microsoft,I'd like to raise an initial topic of migration path for customers.
+For my first post about [Microsoft Fabric](https://www.microsoft.com/en-gb/microsoft-fabric/){:target="_blank"} the unified analytics solution of Microsoft in preview,I'd like to raise an initial topic of migration path for customers.
 The migration scenario to study involves taking over the existing services of customers who currently use managed data services on Azure to use Spark such as [Microsoft HDInsight](https://azure.microsoft.com/en-gb/products/hdinsight/){:target="_blank"} or [Azure Synapse Analytics](https://learn.microsoft.com/en-us/azure/synapse-analytics/overview-what-is){:target="_blank"}, using the Spark engine to process their data and obviously associating the storage layer via Azure Data Lake Storage Gen2 for their datalake.
 
 To store the data, [Parquet file](http://parquet.incubator.apache.org){:target="_blank"} is often the preferred format for storing data because is a columnar format that is supported by many other data processing systems for reading and writing.
@@ -18,15 +18,13 @@ OneLake is a single, unified, logical data lake for the whole organization. Like
 - One copy of data for use with multiple analytical engines
 
 ![Fabric Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/fabric_schema.jpg?raw=true)
-When you start up Onelake in Fabric, you can create a shortcut enabling you to use your Datalake on Azure (Adls G2) , GCP (Google Store Storage) soonest or AWS (S3).
+When you start up Onelake in Fabric, you can create a shortcut enabling you to use your Datalake on Azure (Adls G2) , GCP (Google Store Storage) soonest or AWS (S3) in your lakehouse.
 ![Fabric shortcut](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/shortcut.jpg?raw=true)
 
 To tackle this scenario, We'll explain how to create this shortcut from within Fabric.
-Before you start, you need to create a Fabric capacity in trial version using the following procedure.
+Before you start, you need to create a Fabric capacity in trial version using the [following procedure](https://learn.microsoft.com/en-us/fabric/get-started/fabric-trial){:target="_blank"}.
 
-- DEP enables you to limit the communication from Azure Synapse Analytics. By requiring connections to other services to use managed private endpoints and to approved Azure AD tenants.
+1.	Create or Open your lakehouse
+2.	Right click on a directory within the Lake view of the lakehouse.
+3.	Select New shortcut.
 
-- DEP applies to all services within an Azure workspace including dedicated SQL pools, serverless SQL pools, Apache Spark pools and Pipelines.
-
-As mentioned below, via the DEP feature it will now be impossible for a user to exfiltrate data from the Enterprise datalake to an external storage account via the SQL Serverless pool.
-![Synapse Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/Synapse-DEP.jpg?raw=true)
