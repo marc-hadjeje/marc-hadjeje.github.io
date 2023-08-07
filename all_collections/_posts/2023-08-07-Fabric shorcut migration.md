@@ -20,11 +20,16 @@ OneLake is a single, unified, logical data lake for the whole organization. Like
 ![Fabric Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/fabric_schema.jpg?raw=true)
 When you start up Onelake in Fabric, you can create a shortcut enabling you to use your Datalake on Azure (Adls G2) , GCP (Google Store Storage) soonest or AWS (S3) in your lakehouse.
 ![Fabric shortcut](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/shortcut.jpg?raw=true)
-
 To tackle this scenario, We'll explain how to create this shortcut from within Fabric.
 Before you start, you need to create a Fabric capacity in trial version using the [following procedure](https://learn.microsoft.com/en-us/fabric/get-started/fabric-trial){:target="_blank"}.
-
 1.	Create or Open your [lakehouse](https://learn.microsoft.com/en-us/fabric/data-engineering/tutorial-lakehouse-introduction)
 2.	Right click on a directory within the Lake view of the lakehouse.
 3.	Select New shortcut.
-![Fabric shortcut](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/shortcut_creation.jpg?raw=true)
+2 Possible scenarios : 
+- You already have Delta files create the shortcut from the Tables tab
+- You have parquet files create the shortcut from the Files tab
+![Creation shortcut](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/shortcut_creation.jpg?raw=true)
+4.	Select the Microsoft OneLake tile.
+![New shortcut](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/new_shortcut.jpg?raw=true)
+5.  Select External sources (for me ADLS G2) => Our adlsg2 need to be located in the same region than your lakehouse 
+![New shortcut adlsg2](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/shortcutadlsg.jpg?raw=true)
