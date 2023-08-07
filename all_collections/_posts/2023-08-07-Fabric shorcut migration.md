@@ -8,14 +8,14 @@ categories: ["Data", "Fabric", "Shortcut"]
 
 
 For my first post about [Microsoft Fabric](https://www.microsoft.com/en-gb/microsoft-fabric/){:target="_blank"} the unified analytics solution of Microsoft,I'd like to raise an initial topic of migration path for customers.
-The migration scenario to study involves taking over the existing services of customers who currently use managed data services on Azure to use Spark such as [Microsoft HDInsight](https://azure.microsoft.com/en-gb/products/hdinsight/){:target="_blank"} or [Azure Synapse Analytics](https://learn.microsoft.com/en-us/azure/synapse-analytics/overview-what-is){:target="_blank"}, using the Spark engine to process their data and obviously associating the storage layer via Azure Data Lake Storage Gen2 for their datalake.
+The migration scenario to study involves taking over the existing services of customers who currently use managed data services on Azure to use Spark such as [Microsoft HDInsight](https://azure.microsoft.com/en-gb/products/hdinsight/){:target="_blank"} or [Azure Synapse Analytics](https://learn.microsoft.com/en-us/azure/synapse-analytics/overview-what-is){:target="_blank"}, using the Spark engine to process their data and obviously associating the storage layer via [Azure Data Lake Storage Gen2](https://learn.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction){:target="_blank"} for their datalake.
 
 To store the data, [Parquet file](http://parquet.incubator.apache.org){:target="_blank"} is often the preferred format for storing data because is a columnar format that is supported by many other data processing systems for reading and writing.
 Microsoft's Fabric promise is to enable its customers to leverage the data assets they already have in place in order to migrate to new fabric service offering new features.
 
 ##### Introduction to Onelake
 
-OneLake is a single, unified, logical data lake for the whole organization. Like OneDrive, OneLake comes automatically with every Microsoft Fabric tenant and is designed to be the single place for all your analytics data. OneLake brings customers:
+OneLake comes automatically with every Microsoft Fabric tenant and is designed to be the single place for all your analytics data.OneLake is a single, unified, logical data lake for the whole organization. Like OneDrive, OneLake brings customers:
 
 - One data lake for the entire organization
 - One copy of data for use with multiple analytical engines
@@ -24,7 +24,7 @@ OneLake is a single, unified, logical data lake for the whole organization. Like
 
 ##### OneLake shortcuts
 
-When you start up Onelake in Fabric, you can create a shortcut enabling you to use your Datalake on Azure (ADLS G2) , GCP (Google Cloud Storage) soonest or AWS (Bucket S3).Shortcuts can be created both in Lakehouses and KQL Databases.
+When you start with Onelake in Fabric, you can create a shortcut enabling you to use your Datalake on Azure (ADLS G2) , GCP (Google Cloud Storage) soonest or AWS (Bucket S3).Shortcuts can be created both in Lakehouses and KQL Databases.
 ![Fabric shortcut](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/shortcut.jpg?raw=true)
 To tackle this scenario, We'll explain how to create this shortcut in a lakehouse from within Fabric.
 Before you start, you need to create a Fabric capacity in trial version using the [following procedure](https://learn.microsoft.com/en-us/fabric/get-started/fabric-trial){:target="_blank"}.
@@ -32,8 +32,8 @@ Before you start, you need to create a Fabric capacity in trial version using th
 2.	Right click on a directory within the Lake view of the lakehouse.
 3.	Select New shortcut.
 2 Possible scenarios : 
-- You already have Delta files create the shortcut from the Tables tab
-- You have parquet files create the shortcut from the Files tab
+- You already have Delta files in your datalake, create the shortcut from the Tables folder
+- You have parquet files create the shortcut from the Files folder
 ![Creation shortcut](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/shortcut_creation.jpg?raw=true)
 4.	Select the Microsoft OneLake tile.
 ![New shortcut](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/new_shortcut.jpg?raw=true)
