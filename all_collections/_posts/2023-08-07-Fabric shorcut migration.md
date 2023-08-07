@@ -19,11 +19,11 @@ OneLake is a single, unified, logical data lake for the whole organization. Like
 
 ![Fabric Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/fabric_schema.jpg?raw=true)
 
-##### Introduction to Shortcut
+##### OneLake shortcuts
 
-When you start up Onelake in Fabric, you can create a shortcut enabling you to use your Datalake on Azure (ADLS G2) , GCP (Google Cloud Storage) soonest or AWS (Bucket S3) in your lakehouse.
+When you start up Onelake in Fabric, you can create a shortcut enabling you to use your Datalake on Azure (ADLS G2) , GCP (Google Cloud Storage) soonest or AWS (Bucket S3).Shortcuts can be created both in Lakehouses and KQL Databases.
 ![Fabric shortcut](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/shortcut.jpg?raw=true)
-To tackle this scenario, We'll explain how to create this shortcut from within Fabric.
+To tackle this scenario, We'll explain how to create this shortcut in a lakehouse from within Fabric.
 Before you start, you need to create a Fabric capacity in trial version using the [following procedure](https://learn.microsoft.com/en-us/fabric/get-started/fabric-trial){:target="_blank"}.
 1.	Create or Open your [lakehouse](https://learn.microsoft.com/en-us/fabric/data-engineering/tutorial-lakehouse-introduction)
 2.	Right click on a directory within the Lake view of the lakehouse.
