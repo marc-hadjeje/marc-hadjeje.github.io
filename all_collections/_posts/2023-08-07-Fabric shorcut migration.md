@@ -4,7 +4,9 @@ title: Leverage your data with Microsoft Fabric
 date: "2023-08-07"
 categories: ["Data", "Fabric", "Shortcut"]
 ---
-For my second post, I'm going to focus on a subject that is of major concern to many of my customers, data security inside their Data platform.
+For my first post about [Microsoft Fabric](https://www.microsoft.com/en-gb/microsoft-fabric/){:target="_blank"},I'd like to raise an initial topic of migration path for customers.
+The migration scenario to study involves taking over the existing services of customers who currently use Data PaaS services on Azure to use Spark such as[Microsoft HDInsight](https://azure.microsoft.com/en-gb/products/hdinsight/){:target="_blank"}or [Azure Synapse Analytics](https://learn.microsoft.com/en-us/azure/synapse-analytics/overview-what-is){:target="_blank"}, using the Spark engine to process their data and obviously associating the storage layer via ADLS G2 for their datalake.
+
 
 Beyond the network security aspects, what preoccupies companies are the aspects around data exfiltration which is a very considered threat by the security team.We will address this topic through the usage of [Azure Synapse Analytics](https://learn.microsoft.com/en-us/azure/synapse-analytics/overview-what-is){:target="_blank"},an enterprise analytics service.
 
