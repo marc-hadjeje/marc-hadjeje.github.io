@@ -55,7 +55,7 @@ spark.conf.set("sprk.sql.parquet.vorder.enabled", "true")
 spark.conf.set("spark.microsoft.delta.optimizeWrite.enabled", "true")
 spark.conf.set("spark.microsoft.delta.optimizeWrite.binSize", "1073741824")
 ```
-8. Save the Dataframe from parquet file to delta table
+Save the Dataframe from parquet file to delta table
 
 ```
 # Python code 
