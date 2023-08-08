@@ -24,7 +24,7 @@ OneLake comes automatically with every Microsoft Fabric tenant and is designed t
 
 ##### OneLake shortcuts
 
-When you start with Onelake in Fabric, you can create a shortcut enabling you to use your Datalake on Azure (ADLS G2) , GCP (Google Cloud Storage) soonest or AWS (Bucket S3).Shortcuts can be created both in Lakehouses and KQL Databases.
+When you start with Onelake in Fabric, you can create a shortcut enabling you to use your Datalake on Azure (ADLS G2), GCP (Google Cloud Storage) soonest or AWS (Bucket S3).Shortcuts can be created both in Lakehouses and KQL Databases.
 ![Fabric shortcut](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/shortcut.jpg?raw=true)
 To tackle this scenario, We'll explain how to create this shortcut in a lakehouse from within Fabric.
 Before you start, you need to create a Fabric capacity in trial version using the [following procedure](https://learn.microsoft.com/en-us/fabric/get-started/fabric-trial){:target="_blank"}.
@@ -38,7 +38,7 @@ Before you start, you need to create a Fabric capacity in trial version using th
 ![New shortcut](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/new_shortcut.jpg?raw=true)
 5.  The External ADLS G2 need to be located in the same region than your lakehouse / the link must be the DFS endpoint for the storage account
 ![New shortcut adlsg2](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/shortcutadlsg.jpg?raw=true)
-This is the tree structure of your datalake
+This is the tree structure of your datalake :
 ![New shortcut adlsg2 list](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/shortcutlists.jpg?raw=true)
 Note that if you already have your data in Delta format you can use the managed tables, otherwise you will need to mount your files and generate the Delta format files from the parquet files in your datalake.
 ![New shortcut mount table](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/MountTable.jpg?raw=true)
