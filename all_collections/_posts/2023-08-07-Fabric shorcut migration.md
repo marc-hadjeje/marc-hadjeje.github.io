@@ -52,6 +52,13 @@ spark.conf.set("sprk.sql.parquet.vorder.enabled", "true")
 spark.conf.set("spark.microsoft.delta.optimizeWrite.enabled", "true")
 spark.conf.set("spark.microsoft.delta.optimizeWrite.binSize", "1073741824")
 ```
+```Python
+table_name = 'fact_sale'
+#This cell save the dataframe to delta file
+df = spark.read.format("parquet").load('Files/AdlsG2-Marc/sale2023.parquet')
+df.write.mode("overwrite").format("delta").partitionBy("Year").save("Tables/" + table_name)
+```
+
 Bellow is the parquet file in table format including the structure with available columns.
 ![New shortcut table structure](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/sales_table.jpg?raw=true)
 We can then make the most of your data, including the option of using [Direct Lake](https://learn.microsoft.com/en-us/power-bi/enterprise/directlake-overview) with PowerBI and delta tables.
