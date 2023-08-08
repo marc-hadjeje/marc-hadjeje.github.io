@@ -48,13 +48,14 @@ Note that if you already have your data in Delta format you can use the managed 
 
 7. To create this notebook, the code is written in Pyspark,we are going to use two features (Verti-Parquet and Optimize Write) of Fabric for optimized data writing and for subsequent better reading performance
 ```
-
 # Python code 
 #This cell sets Spark session settings to enable Verti-Parquet and Optimize on Write.
 spark.conf.set("sprk.sql.parquet.vorder.enabled", "true")
 spark.conf.set("spark.microsoft.delta.optimizeWrite.enabled", "true")
 spark.conf.set("spark.microsoft.delta.optimizeWrite.binSize", "1073741824")
 ```
+8. Save the Dataframe from parquet file to delta table
+
 ```
 # Python code 
 table_name = 'fact_sale'
