@@ -33,7 +33,7 @@ Before you start, you need to create a Fabric capacity in trial version using th
 2.	Right click on a directory within the Lake view of the lakehouse.
 3.	Select New shortcut with 2 Possible scenarios : 
 - You already have Delta files in your datalake, create the shortcut from the Tables folder
-- You have parquet files create the shortcut from the Files folder
+- You have parquet files, create the shortcut from the Files folder
 ![Creation shortcut](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/shortcut_creation.jpg?raw=true)
 4.	Select External sources (here will be ADLS G2)
 ![New shortcut](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/new_shortcut.jpg?raw=true)
@@ -47,5 +47,5 @@ Note that if you already have your data in Delta format you can use the managed 
 ![New shortcut notebook](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/notebook.jpg?raw=true)
 Bellow is the parquet file in table format including the structure with available columns.
 ![New shortcut table structure](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/sales_table.jpg?raw=true)
-You can then make the most of your data, including the option of using [Direct Lake](https://learn.microsoft.com/en-us/power-bi/enterprise/directlake-overview) with PowerBI and delta tables.
+We can then make the most of your data, including the option of using [Direct Lake](https://learn.microsoft.com/en-us/power-bi/enterprise/directlake-overview) with PowerBI and delta tables.
 ![New shortcut table structure](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/directlake-diagram.jpeg?raw=true)
