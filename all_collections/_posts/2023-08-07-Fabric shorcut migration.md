@@ -45,14 +45,16 @@ Note that if you already have your data in Delta format you can use the managed 
 ![New shortcut mount table](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/MountTable.jpg?raw=true)
 6. Notebooks can be used to programmatically mount all your parquet files in delta format and make them available on the table.
 ![New shortcut notebook](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/notebook.jpg?raw=true)
+To create this notebook, the code is written in Pyspark,we are going to use two features (Verti-Parquet and Optimize Write) of Fabric for optimized data writing and for subsequent better reading performance
 ```
-# Python code with syntax highlighting
+# Python code 
 #This cell sets Spark session settings to enable Verti-Parquet and Optimize on Write.
 spark.conf.set("sprk.sql.parquet.vorder.enabled", "true")
 spark.conf.set("spark.microsoft.delta.optimizeWrite.enabled", "true")
 spark.conf.set("spark.microsoft.delta.optimizeWrite.binSize", "1073741824")
 ```
 ```
+# Python code 
 table_name = 'fact_sale'
 #This cell save the dataframe to delta file
 df = spark.read.format("parquet").load('Files/AdlsG2-Marc/sale2023.parquet')
