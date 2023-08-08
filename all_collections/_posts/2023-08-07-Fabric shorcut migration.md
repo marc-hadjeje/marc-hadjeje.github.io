@@ -43,7 +43,7 @@ This is the tree structure of your datalake
 ![New shortcut adlsg2 list](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/shortcutlists.jpg?raw=true)
 Note that if you already have your data in Delta format you can use the managed tables, otherwise you will need to mount your files and generate the Delta format files from the parquet files in your datalake.
 ![New shortcut mount table](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/MountTable.jpg?raw=true)
-6. Notebooks can be used to programmatically mount all your parquet files in delta format and make them available on the table.
+6. Notebooks can be used to script mount all your parquet files in delta format and make them available on the table.
 ![New shortcut notebook](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/notebook.jpg?raw=true)
 
 7. To create this notebook, the code is written in Pyspark,we are going to use two features ([Verti-Parquet](https://learn.microsoft.com/en-us/fabric/data-engineering/delta-optimization-and-v-order?tabs=sparksql){:target="_blank"} and Optimize Write) of Fabric for optimized data writing and for subsequent better reading performance.
