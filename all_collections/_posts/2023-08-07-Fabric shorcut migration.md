@@ -30,7 +30,7 @@ To tackle this scenario, We'll explain how to create this shortcut in a lakehous
 Before you start, you need to create a Fabric capacity in trial version using the [following procedure](https://learn.microsoft.com/en-us/fabric/get-started/fabric-trial){:target="_blank"}.
 1.	Create or Open your [lakehouse](https://learn.microsoft.com/en-us/fabric/data-engineering/tutorial-lakehouse-introduction)
 2.	Right click on a directory within the Lake view of the lakehouse
-3.	Select New shortcut with 2 Possible scenarios : 
+3.	Select New shortcut with 2 possible scenarios : 
 - You already have Delta files in your datalake, create the shortcut from the Tables folder
 - You have parquet files, create the shortcut from the Files folder
 ![Creation shortcut](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/shortcut_creation.jpg?raw=true)
