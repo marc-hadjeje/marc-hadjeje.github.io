@@ -46,7 +46,7 @@ Note that if you already have your data in Delta format you can use the managed 
 6. Notebooks can be used to programmatically mount all your parquet files in delta format and make them available on the table.
 ![New shortcut notebook](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/notebook.jpg?raw=true)
 
-7. To create this notebook, the code is written in Pyspark,we are going to use two features (Verti-Parquet and Optimize Write) of Fabric for optimized data writing and for subsequent better reading performance.
+7. To create this notebook, the code is written in Pyspark,we are going to use two features ([Verti-Parquet](https://learn.microsoft.com/en-us/fabric/data-engineering/delta-optimization-and-v-order?tabs=sparksql){:target="_blank"} and Optimize Write) of Fabric for optimized data writing and for subsequent better reading performance.
    
 ```
 # Python code 
