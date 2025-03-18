@@ -81,21 +81,18 @@ CATALOG = 'SNOWFLAKE'
 BASE_LOCATION = 'Inventory/';
 
 ```
-##### Create a table shortcut to an Iceberg table
+##### Create a table shortcut to an Iceberg table in Fabric
 
-In Microsoft OneLake, you can create shortcuts to your Apache Iceberg tables from Snowflake, making them accessible across various Fabric workloads. This is achieved through metadata virtualization ( X Table), which allows Iceberg tables to be viewed as Delta Lake tables via the shortcut. 
+In Microsoft OneLake,create shortcuts to your Apache Iceberg tables from Snowflake, making them accessible across various Fabric workloads.
+Open your workspace and select Manage access, then Add people or groups. Grant the application used by your Snowflake external volume the permissions needed to write data to lakehouses in your workspace. We recommend granting the Contributor role.
 When you set up a shortcut to an Iceberg table folder, OneLake automatically generates the necessary Delta Lake metadata (the Delta log) for that table, ensuring the Delta Lake metadata is available through the shortcut.
-
-In Fabric, open your workspace and select Manage access, then Add people or groups. Grant the application used by your Snowflake external volume the permissions needed to write data to lakehouses in your workspace. We recommend granting the Contributor role.
-
-Find where your Iceberg table is stored in OneLake and create a new shortcut in the Tables area of a non-schema-enabled lakehouse.
 
 ![Fabric Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/iceberg-shortcut-diagram.jpeg?raw=true)
 
 
 ##### End to End Scenario with the solution
 
-In this reporting-oriented scenario(2), we propose an architecture where the Snowflake exposition layer writes its tables into Onelake storage in Iceberg format via external volumes. Subsequently, Fabric uses a shortcut to mount the Iceberg file into a table and allow data reading for PowerBI in direct lake mode. This solution enables access to Snowflake data without copying or loading data, offering an alternative to the direct query or import mode for PowerBI. It reduces costs by avoiding intensive use of Snowflake compute and Fabric.
+In this reporting-oriented scenario, this is an architecture where the Snowflake exposition layer writes its tables into Onelake storage in Iceberg format via external volumes. Subsequently, Fabric uses a shortcut to mount the Iceberg file into a table and allow data reading for PowerBI in direct lake mode. This solution enables access to Snowflake data without copying or loading data, offering an alternative to the direct query or import mode for PowerBI. It reduces costs by avoiding intensive use of Snowflake compute and Fabric.
 
 ![scenario Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/archi-end.jpg?raw=true)
 
