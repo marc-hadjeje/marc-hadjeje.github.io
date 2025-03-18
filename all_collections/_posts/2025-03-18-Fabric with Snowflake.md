@@ -7,17 +7,16 @@ categories: ["Snowflake", "Fabric", "Iceberg"]
 In May 2024, Snowflake and Microsoft [annouced](https://www.snowflake.com/en/blog/microsoft-partnership-enhancing-interoperability/){:target="_blank"} the extension of their partnership through the Iceberg file format, establishing an intelligible exchange format between their technologies. This article explores technically how this announcement optimizes the use of products without compromising your data and analytics strategy.
 The goal of this article is not to compare the two solutions, but to explain the interoperability of the two technologies, often examined in the context of consuming Power BI reports hosted on a Snowflake data warehouse.
 
-In order to deliver these benefits, Snowflake and Fabric will add these capabilities for customers now and later this year:
+In order to deliver these benefits, Snowflake and Fabric will add these capabilities for customers :S
 
 - Snowflake will be able to store data in Iceberg format in OneLake 
 - Fabric will be able to store data in Iceberg format in OneLake via Apache XTable translation in OneLake.
 - Data written by either platform, Snowflake or Fabric, will be accessible from both the platforms.
 - Snowflake will be able to read Fabric data artifacts in OneLake, stored physically or virtually through shortcuts.
-- Data from Snowflake and Fabric can be used by a variety of services, such as Microsoft 365, Copilot in Microsoft 365, Snowflake Cortex AI, Azure AI Studio, Snowflake Copilot and more.
 
 ![Fabric shortcut](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/shortcut.jpg?raw=true)
 
-##### Introduction to lakehouse, formats
+##### Introduction to lakehouse, data files formats
 
 Lakehouse represents a significant advance in data management, combining flexibility, performance and governance to meet current and future business challenges. But when it comes to storage formats, well, vendors (for the most part) have storage formats that are certainly open, but different
 
