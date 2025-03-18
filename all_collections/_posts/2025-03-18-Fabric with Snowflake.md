@@ -43,8 +43,9 @@ In Snowflake , Apache Iceberg™ tables for Snowflake combine the performance an
 Make sure your Fabric capacity is in the same Azure location as your Snowflake instance.
 In Snowflake, set up your EXTERNAL VOLUME using the path to the Files folder in your lakehouse
 
+
 ```
-# Python code 
+# Sql code inside snowflake
 #CREATE OR REPLACE EXTERNAL VOLUME onelake_exvol
 STORAGE_LOCATIONS =
 (
@@ -57,21 +58,42 @@ STORAGE_LOCATIONS =
 );
 ```
 
+Now that your external volume is created Open the consent URL from the previous step in a new browser tab. If you would like to proceed, consent to the required application permissions, if prompted.
+
+```
+# Sql code inside snowflake
+#run the following command to retrieve the consent URL and name of the application that Snowflake uses to write to OneLake
+DESC EXTERNAL VOLUME onelake_exvol;
+#check if you are abble to have the right access to Onelake 
+SELECT SYSTEM$VERIFY_EXTERNAL_VOLUME('onelake_nts');
+```
+
+In Snowflake, use your new external volume to create an Iceberg table.
+
+```
+# Sql code inside snowflake
+CREATE OR REPLACE ICEBERG TABLE MYDATABASE.PUBLIC.Inventory (
+    InventoryId int,
+    ItemName STRING
+)
+EXTERNAL_VOLUME = 'onelake_exvol'
+CATALOG = 'SNOWFLAKE'
+BASE_LOCATION = 'Inventory/';
+
+```
 ##### Create a table shortcut to an Iceberg table
 
 In Microsoft OneLake, you can create shortcuts to your Apache Iceberg tables from Snowflake, making them accessible across various Fabric workloads. This is achieved through metadata virtualization ( X Table), which allows Iceberg tables to be viewed as Delta Lake tables via the shortcut. 
 When you set up a shortcut to an Iceberg table folder, OneLake automatically generates the necessary Delta Lake metadata (the Delta log) for that table, ensuring the Delta Lake metadata is available through the shortcut.
 
+In Fabric, open your workspace and select Manage access, then Add people or groups. Grant the application used by your Snowflake external volume the permissions needed to write data to lakehouses in your workspace. We recommend granting the Contributor role.
+
+Find where your Iceberg table is stored in OneLake and create a new shortcut in the Tables area of a non-schema-enabled lakehouse.
+
 ![Fabric Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/iceberg-shortcut-diagram.jpg?raw=true)
 
-```
-# Python code
-#This cell sets Spark session settings to enable Verti-Parquet and Optimize on Write.
-spark.conf.set("sprk.sql.parquet.vorder.enabled", "true")
-spark.conf.set("spark.microsoft.delta.optimizeWrite.enabled", "true")
-spark.conf.set("spark.microsoft.delta.optimizeWrite.binSize", "1073741824")
-```
-##### End to End Scenario 
+
+##### End to End Scenario with the solution
 
 In this reporting-oriented scenario(2), we propose an architecture where the Snowflake exposition layer writes its tables into Onelake storage in Iceberg format via external volumes. Subsequently, Fabric uses a shortcut to mount the Iceberg file into a table and allow data reading for PowerBI in direct lake mode. This solution enables access to Snowflake data without copying or loading data, offering an alternative to the direct query or import mode for PowerBI. It reduces costs by avoiding intensive use of Snowflake compute and Fabric.
 
