@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Leverage your data assets with Microsoft Fabric
+title: Interoperability Fabric with Snowflake
 date: "2023-08-07"
-categories: ["Data", "Fabric", "Shortcut"]
+categories: ["Snowflake", "Fabric", "Iceberg"]
 ---
 **Microsoft Fabric workloads are now generally available since the 15th November 2023**
 
