@@ -1,18 +1,18 @@
 ---
 layout: post
 title: Interoperability Fabric with Snowflake
-date: "2025-03-17"
+date: "2025-03-18"
 categories: ["Snowflake", "Fabric", "Iceberg"]
 ---
 In May 2024, Snowflake and Microsoft [annouced](https://www.snowflake.com/en/blog/microsoft-partnership-enhancing-interoperability/){:target="_blank"} the extension of their partnership through the Iceberg file format, establishing an intelligible exchange format between their technologies. This article explores technically how this announcement optimizes the use of products without compromising your data and analytics strategy.
+
 The goal of this article is not to compare the two solutions, but to explain the interoperability of the two technologies, often examined in the context of consuming Power BI reports hosted on a Snowflake data warehouse.
 
 In order to deliver these benefits, Snowflake and Fabric will add these capabilities for customers :
 
 - Snowflake will be able to store data in Iceberg format in OneLake 
 - Fabric will be able to store data in Iceberg format in OneLake via Apache XTable translation in OneLake.
-- Data written by either platform, Snowflake or Fabric, will be accessible from both the platforms.
-- Snowflake will be able to read Fabric data artifacts in OneLake, stored physically or virtually through shortcuts.
+
 
 ![Fabric shortcut](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/shortcut.jpg?raw=true)
 
@@ -35,16 +35,18 @@ Well, wouldn't it be better not to have to choose? And so X Table was born, for 
 
 ![Fabric Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/fabric_schema.jpg?raw=true)
 
-##### In Microsoft Fabric
+##### Architecture 
+In Snowflake , Apache Iceberg™ tables for Snowflake combine the performance and query semantics of typical Snowflake tables with external cloud storage that you manage. They are ideal for existing data lakes that you cannot, or choose not to, store in Snowflake.
 
-In Microsoft OneLake, you can create shortcuts to your Apache Iceberg tables, making them accessible across various Fabric workloads. This is achieved through metadata virtualization ( X Table), which allows Iceberg tables to be viewed as Delta Lake tables via the shortcut. 
+
+In Microsoft OneLake, you can create shortcuts to your Apache Iceberg tables from Snowflake, making them accessible across various Fabric workloads. This is achieved through metadata virtualization ( X Table), which allows Iceberg tables to be viewed as Delta Lake tables via the shortcut. 
 When you set up a shortcut to an Iceberg table folder, OneLake automatically generates the necessary Delta Lake metadata (the Delta log) for that table, ensuring the Delta Lake metadata is available through the shortcut.
 
 ![Fabric Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/fabric_schema.jpg?raw=true)
 
 ##### In Snowflake
 
-Apache Iceberg™ tables for Snowflake combine the performance and query semantics of typical Snowflake tables with external cloud storage that you manage. They are ideal for existing data lakes that you cannot, or choose not to, store in Snowflake.
+
 
 ![Fabric Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/fabric_schema.jpg?raw=true)
    
