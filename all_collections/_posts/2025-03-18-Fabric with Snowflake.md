@@ -19,13 +19,12 @@ In order to deliver these benefits, Snowflake and Fabric will add these capabili
 ##### Introduction to lakehouse, data files formats
 Before discussing the features in detail, let's recall the benefits of a lakehouse and the different formats used in the data analytics world.
 
-Lakehouse represents a significant advance in data management, combining flexibility, performance and governance to meet current and future business challenges. But when it comes to storage formats, well, vendors (for the most part) have storage formats that are certainly open, but different
-
-![Fabric Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/fabric_schema.jpg?raw=true)
+Lakehouse represents a significant advance in data management, combining flexibility, performance and governance to meet current and future business challenges. But when it comes to storage formats, well, vendors (for the most part) have storage formats that are certainly open, but different.
 
 While the fundamentals of table formats are generally similar, each format includes a unique metadata layer on top of Parquet files:
 
-![Fabric Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/fabric_schema.jpg?raw=true)
+![Fabric Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/format.jpg?raw=true)
+
 
 The question is, if their fundamentals aren't all that different, which one should you choose?
 
@@ -33,7 +32,7 @@ The question is, if their fundamentals aren't all that different, which one shou
 
 Well, wouldn't it be better not to have to choose? And so X Table was born, for seamless interoperability between Apache Hudi, Delta Lake and Apache Iceberg tables. 
 
-![Fabric Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/fabric_schema.jpg?raw=true)
+![Fabric Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/xtable.jpg?raw=true)
 
 ##### End to End Scenario 
 
