@@ -34,31 +34,35 @@ Well, wouldn't it be better not to have to choose? And so X Table was born, for 
 
 ![Fabric Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/xtable.jpg?raw=true)
 
-##### End to End Scenario 
+##### Write an Iceberg table to OneLake using Snowflake
 
-In this reporting-oriented scenario, we propose an architecture where the Snowflake exposition layer writes its tables into Onelake storage in Iceberg format via external volumes. Subsequently, Fabric uses a shortcut to mount the Iceberg file into a table and allow data reading for PowerBI in direct lake mode. This solution enables access to Snowflake data without copying or loading data, offering an alternative to the direct query or import mode for PowerBI. It reduces costs by avoiding intensive use of Snowflake compute and Fabric.
-
-![scenario Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/archi-end.jpg?raw=true)
-
-##### Deep dive in Snowflake 
 In Snowflake , Apache Iceberg™ tables for Snowflake combine the performance and query semantics of typical Snowflake tables with external cloud storage that you manage. They are ideal for existing data lakes that you cannot, or choose not to, store in Snowflake.
 
-![Fabric Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/fabric_schema.jpg?raw=true)
+![Fabric Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/icebergsnow.jpg?raw=true)
+
+Make sure your Fabric capacity is in the same Azure location as your Snowflake instance.
+In Snowflake, set up your EXTERNAL VOLUME using the path to the Files folder in your lakehouse
 
 ```
 # Python code 
-#This cell sets Spark session settings to enable Verti-Parquet and Optimize on Write.
-spark.conf.set("sprk.sql.parquet.vorder.enabled", "true")
-spark.conf.set("spark.microsoft.delta.optimizeWrite.enabled", "true")
-spark.conf.set("spark.microsoft.delta.optimizeWrite.binSize", "1073741824")
+#CREATE OR REPLACE EXTERNAL VOLUME onelake_exvol
+STORAGE_LOCATIONS =
+(
+    (
+        NAME = 'onelake_exvol'
+        STORAGE_PROVIDER = 'AZURE'
+        STORAGE_BASE_URL = 'azure://<path_to_Files>/icebergtables'
+        AZURE_TENANT_ID = '<Tenant_ID>'
+    )
+);
 ```
 
-##### Deep dive in Fabric 
+##### Create a table shortcut to an Iceberg table
 
 In Microsoft OneLake, you can create shortcuts to your Apache Iceberg tables from Snowflake, making them accessible across various Fabric workloads. This is achieved through metadata virtualization ( X Table), which allows Iceberg tables to be viewed as Delta Lake tables via the shortcut. 
 When you set up a shortcut to an Iceberg table folder, OneLake automatically generates the necessary Delta Lake metadata (the Delta log) for that table, ensuring the Delta Lake metadata is available through the shortcut.
 
-![Fabric Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/fabric_schema.jpg?raw=true)
+![Fabric Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/iceberg-shortcut-diagram.jpg?raw=true)
 
 ```
 # Python code
@@ -67,5 +71,9 @@ spark.conf.set("sprk.sql.parquet.vorder.enabled", "true")
 spark.conf.set("spark.microsoft.delta.optimizeWrite.enabled", "true")
 spark.conf.set("spark.microsoft.delta.optimizeWrite.binSize", "1073741824")
 ```
+##### End to End Scenario 
 
+In this reporting-oriented scenario(2), we propose an architecture where the Snowflake exposition layer writes its tables into Onelake storage in Iceberg format via external volumes. Subsequently, Fabric uses a shortcut to mount the Iceberg file into a table and allow data reading for PowerBI in direct lake mode. This solution enables access to Snowflake data without copying or loading data, offering an alternative to the direct query or import mode for PowerBI. It reduces costs by avoiding intensive use of Snowflake compute and Fabric.
+
+![scenario Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/archi-end.jpg?raw=true)
 
