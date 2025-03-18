@@ -14,7 +14,7 @@ In order to deliver these benefits, Snowflake and Fabric will add these capabili
 - Fabric will be able to store data in Iceberg format in OneLake via Apache XTable translation in OneLake.
 
 
-![Fabric shortcut](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/shortcut.jpg?raw=true)
+![Fabric Snowflake](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/blog_post_image.jpg?raw=true)
 
 ##### Introduction to lakehouse, data files formats
 Before discussing the features in detail, let's recall the benefits of a lakehouse and the different formats used in the data analytics world.
@@ -37,7 +37,7 @@ Well, wouldn't it be better not to have to choose? And so X Table was born, for 
 
 ##### End to End Scenario 
 
-In this reporting-oriented scenario, we propose an architecture where the Snowflake exposure layer writes its tables into Onelake storage in Iceberg format via external volumes. Subsequently, Fabric uses a shortcut to mount the Iceberg file into a table and allow data reading for PowerBI in direct lake mode. This solution enables access to Snowflake data without copying or loading data, offering an alternative to the direct query or import mode for PowerBI. It reduces costs by avoiding intensive use of Snowflake compute and Fabric.
+In this reporting-oriented scenario, we propose an architecture where the Snowflake exposition layer writes its tables into Onelake storage in Iceberg format via external volumes. Subsequently, Fabric uses a shortcut to mount the Iceberg file into a table and allow data reading for PowerBI in direct lake mode. This solution enables access to Snowflake data without copying or loading data, offering an alternative to the direct query or import mode for PowerBI. It reduces costs by avoiding intensive use of Snowflake compute and Fabric.
 
 ![Fabric Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/fabric_schema.jpg?raw=true)
 
