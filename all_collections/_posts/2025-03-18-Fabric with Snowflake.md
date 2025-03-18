@@ -90,7 +90,7 @@ In Fabric, open your workspace and select Manage access, then Add people or grou
 
 Find where your Iceberg table is stored in OneLake and create a new shortcut in the Tables area of a non-schema-enabled lakehouse.
 
-![Fabric Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/iceberg-shortcut-diagram.jpg?raw=true)
+![Fabric Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/iceberg-shortcut-diagram.jpeg?raw=true)
 
 
 ##### End to End Scenario with the solution
