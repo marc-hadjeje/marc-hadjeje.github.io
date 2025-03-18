@@ -1,13 +1,13 @@
 ---
 layout: post
 title: Interoperability Fabric with Snowflake
-date: "2023-08-07"
+date: "2025-03-17"
 categories: ["Snowflake", "Fabric", "Iceberg"]
 ---
 In May 2024, Snowflake and Microsoft [annouced](https://www.snowflake.com/en/blog/microsoft-partnership-enhancing-interoperability/){:target="_blank"} the extension of their partnership through the Iceberg file format, establishing an intelligible exchange format between their technologies. This article explores technically how this announcement optimizes the use of products without compromising your data and analytics strategy.
 The goal of this article is not to compare the two solutions, but to explain the interoperability of the two technologies, often examined in the context of consuming Power BI reports hosted on a Snowflake data warehouse.
 
-In order to deliver these benefits, Snowflake and Fabric will add these capabilities for customers :S
+In order to deliver these benefits, Snowflake and Fabric will add these capabilities for customers :
 
 - Snowflake will be able to store data in Iceberg format in OneLake 
 - Fabric will be able to store data in Iceberg format in OneLake via Apache XTable translation in OneLake.
@@ -17,6 +17,7 @@ In order to deliver these benefits, Snowflake and Fabric will add these capabili
 ![Fabric shortcut](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/shortcut.jpg?raw=true)
 
 ##### Introduction to lakehouse, data files formats
+Before discussing the features in detail, let's recall the benefits of a lakehouse and the different formats used in the data analytics world.
 
 Lakehouse represents a significant advance in data management, combining flexibility, performance and governance to meet current and future business challenges. But when it comes to storage formats, well, vendors (for the most part) have storage formats that are certainly open, but different
 
@@ -31,6 +32,19 @@ The question is, if their fundamentals aren't all that different, which one shou
 ##### Xtable
 
 Well, wouldn't it be better not to have to choose? And so X Table was born, for seamless interoperability between Apache Hudi, Delta Lake and Apache Iceberg tables. 
+
+![Fabric Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/fabric_schema.jpg?raw=true)
+
+##### In Microsoft Fabric
+
+In Microsoft OneLake, you can create shortcuts to your Apache Iceberg tables, making them accessible across various Fabric workloads. This is achieved through metadata virtualization ( X Table), which allows Iceberg tables to be viewed as Delta Lake tables via the shortcut. 
+When you set up a shortcut to an Iceberg table folder, OneLake automatically generates the necessary Delta Lake metadata (the Delta log) for that table, ensuring the Delta Lake metadata is available through the shortcut.
+
+![Fabric Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/fabric_schema.jpg?raw=true)
+
+##### In Snowflake
+
+Apache Iceberg™ tables for Snowflake combine the performance and query semantics of typical Snowflake tables with external cloud storage that you manage. They are ideal for existing data lakes that you cannot, or choose not to, store in Snowflake.
 
 ![Fabric Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/fabric_schema.jpg?raw=true)
    
