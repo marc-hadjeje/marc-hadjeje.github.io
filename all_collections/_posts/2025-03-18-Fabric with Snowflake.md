@@ -58,7 +58,7 @@ STORAGE_LOCATIONS =
 );
 ```
 
-Now that your external volume is created Open the consent URL from the previous step in a new browser tab. If you would like to proceed, consent to the required application permissions, if prompted.
+Now the external volume is created Open the consent URL from the previous step in a new browser tab and proceed, consent to the required application permissions, if prompted.
 
 ```
 # Sql code inside snowflake
@@ -66,12 +66,8 @@ Now that your external volume is created Open the consent URL from the previous 
 DESC EXTERNAL VOLUME onelake_exvol;
 #check if you are abble to have the right access to Onelake 
 SELECT SYSTEM$VERIFY_EXTERNAL_VOLUME('onelake_nts');
-```
 
-In Snowflake, use your new external volume to create an Iceberg table.
-
-```
-# Sql code inside snowflake
+# use your new external volume to create an Iceberg table.
 CREATE OR REPLACE ICEBERG TABLE MYDATABASE.PUBLIC.Inventory (
     InventoryId int,
     ItemName STRING
