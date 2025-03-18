@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Interoperability Fabric with Snowflake
+title: Interoperability between Fabric and Snowflake
 date: "2025-03-18"
 categories: ["Snowflake", "Fabric", "Iceberg"]
 ---
@@ -41,21 +41,11 @@ In this reporting-oriented scenario, we propose an architecture where the Snowfl
 
 ![Fabric Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/fabric_schema.jpg?raw=true)
 
-##### Deep dive 
+##### Deep dive in Snowflake 
 In Snowflake , Apache Iceberg™ tables for Snowflake combine the performance and query semantics of typical Snowflake tables with external cloud storage that you manage. They are ideal for existing data lakes that you cannot, or choose not to, store in Snowflake.
 
-
-In Microsoft OneLake, you can create shortcuts to your Apache Iceberg tables from Snowflake, making them accessible across various Fabric workloads. This is achieved through metadata virtualization ( X Table), which allows Iceberg tables to be viewed as Delta Lake tables via the shortcut. 
-When you set up a shortcut to an Iceberg table folder, OneLake automatically generates the necessary Delta Lake metadata (the Delta log) for that table, ensuring the Delta Lake metadata is available through the shortcut.
-
 ![Fabric Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/fabric_schema.jpg?raw=true)
 
-##### In Snowflake
-
-
-
-![Fabric Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/fabric_schema.jpg?raw=true)
-   
 ```
 # Python code 
 #This cell sets Spark session settings to enable Verti-Parquet and Optimize on Write.
@@ -63,17 +53,20 @@ spark.conf.set("sprk.sql.parquet.vorder.enabled", "true")
 spark.conf.set("spark.microsoft.delta.optimizeWrite.enabled", "true")
 spark.conf.set("spark.microsoft.delta.optimizeWrite.binSize", "1073741824")
 ```
-Save the Dataframe from parquet file to delta table
+
+##### Deep dive in Fabric 
+
+In Microsoft OneLake, you can create shortcuts to your Apache Iceberg tables from Snowflake, making them accessible across various Fabric workloads. This is achieved through metadata virtualization ( X Table), which allows Iceberg tables to be viewed as Delta Lake tables via the shortcut. 
+When you set up a shortcut to an Iceberg table folder, OneLake automatically generates the necessary Delta Lake metadata (the Delta log) for that table, ensuring the Delta Lake metadata is available through the shortcut.
+
+![Fabric Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/fabric_schema.jpg?raw=true)
 
 ```
-# Python code 
-table_name = 'fact_sale'
-#This cell save the dataframe to delta file
-df = spark.read.format("parquet").load('Files/AdlsG2-Marc/sale2023.parquet')
-df.write.mode("overwrite").format("delta").partitionBy("Year").save("Tables/" + table_name)
+# Python code
+#This cell sets Spark session settings to enable Verti-Parquet and Optimize on Write.
+spark.conf.set("sprk.sql.parquet.vorder.enabled", "true")
+spark.conf.set("spark.microsoft.delta.optimizeWrite.enabled", "true")
+spark.conf.set("spark.microsoft.delta.optimizeWrite.binSize", "1073741824")
 ```
 
-Bellow is the parquet file in table format including the structure with available columns.
-![New shortcut table structure](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/sales_table.jpg?raw=true)
-We can then make the most of your data, including the option of using [Direct Lake](https://learn.microsoft.com/en-us/power-bi/enterprise/directlake-overview) with PowerBI and delta tables.
-![New shortcut table structure](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/directlake-diagram.jpeg?raw=true)
+
