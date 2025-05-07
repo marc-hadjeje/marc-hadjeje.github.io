@@ -5,13 +5,14 @@ date: "2025-05-07"
 categories: ["Synapse", "Fabric", "Datawarehouse","Migraton"]
 ---
 In this article, we address a common concern among our Azure clients, particularly those who chose [Azure Synapse Analytics](https://learn.microsoft.com/en-us/azure/synapse-analytics/overview-what-is){:target="_blank"} their data platform several months ago. Since the launch of Microsoft Fabric in late 2023, many users have been questioning the long-term future of Synapse.
-Rest assured: as of today, there are no plans to retire Synapse Analytics. The platform remains fully supported and maintained by [Microsoft](https://blog.fabric.microsoft.com/en-us/blog/microsoft-fabric-explained-for-existing-synapse-users/){:target="_blank"}
+Rest assured: as of today, there are no plans to retire Synapse Analytics. The platform remains fully supported and maintained by [Microsoft](https://blog.fabric.microsoft.com/en-us/blog/microsoft-fabric-explained-for-existing-synapse-users/){:target="_blank"}.
 
 However, the next generation of Microsoft’s big data analytics solutions is now a core part of Microsoft Fabric. For clients considering a migration and looking to transition from a PaaS to a SaaS experience, we will begin by mapping the key components and capabilities between the two platforms.
 
 ![Fabric Synapse Equivalent](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/format.jpg?raw=true)
 
 ##### Introduction to Fabric Migration Assistant for Data Warehouse
+
 For clients primarily using Spark workloads or data pipelines within Synapse, the migration to Microsoft Fabric is straightforward and well-supported. Microsoft provides detailed documentation to guide this transition:
 
 -	Overview of migrating Synapse to Fabric
@@ -21,57 +22,39 @@ For clients primarily using Spark workloads or data pipelines within Synapse, th
 
 But what about the Synapse Data Warehouse — specifically the Dedicated SQL Pool that relies on its proprietary storage?
 
-##### Step-by-step guide to using the assistant"
+##### Step-by-step guide to using the assistant
 The Fabric Migration Assistant is a migration experience to copy SQL pools in Azure Synapse Analytics seamlessly into Microsoft Fabric Data Warehouse.
 It allows copies metadata and data from the source database, automatically converting the source schema to Fabric Data Warehouse. AI-powered assistance provides quick solutions for migration incompatibility or errors.
 Microsoft provides a comprehensive list of [prerequisites](https://learn.microsoft.com/en-us/azure/synapse-analytics/overview-what-is){:target="_blank"} on its official documentation site. However, in this guide, I’ll focus on the more complex aspects that may require special attention when using the assistant.
 
-##### Write an Iceberg table to OneLake using Snowflake
+##### Extract DACPAC (data-tier application package) file from Synapse Analytics Dedicated SQL Pool
 
-In Snowflake , Apache Iceberg™ tables for Snowflake combine the performance and query semantics of typical Snowflake tables with external cloud storage that you manage. They are ideal for existing data lakes that you cannot, or choose not to, store in Snowflake.
+The first step is to extract the metadata from your Synapse Analytics Dedicated SQL Pool. This includes the schema definitions for tables, views, stored procedures, functions, and other database objects.
+For my migration tests, I used a Synapse database model provided as part of a Microsoft [hands-on lab](https://learn.microsoft.com/en-us/azure/synapse-analytics/overview-what-is){:target="_blank"}. This database includes several tables, which I’ve listed below using SQL Server Management Studio
 
 ![Fabric Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/icebergsnow.jpg?raw=true)
 
-Make sure your Fabric capacity is in the same Azure location as your Snowflake instance.
-In Snowflake, set up your EXTERNAL VOLUME using the path to the Files folder in your lakehouse
+The first challenge I encountered was that, unlike an on-premises MS SQL database, I couldn’t generate the DACPAC of The SQL dedicated Pool Database directly from the SSMS interface. Instead, I had to use the command line SqlPackage CLI to perform the extraction.
 
-
-```
-# Sql code inside snowflake
-#CREATE OR REPLACE EXTERNAL VOLUME onelake_exvol
-STORAGE_LOCATIONS =
-(
-    (
-        NAME = 'onelake_exvol'
-        STORAGE_PROVIDER = 'AZURE'
-        STORAGE_BASE_URL = 'azure://<path_to_Files>/icebergtables'
-        AZURE_TENANT_ID = '<Tenant_ID>'
-    )
-);
-```
-
-Now the external volume is created Open the consent URL from the previous step in a new browser tab and proceed, consent to the required application permissions, if prompted.
-
-Run the following command to retrieve the consent URL and name of the application that Snowflake uses to write to OneLake
+1.	Download and install SqlPackage
 
 ```
-# Sql code inside snowflake
-
-DESC EXTERNAL VOLUME onelake_exvol;
-#check if you are abble to have the right access to Onelake 
-SELECT SYSTEM$VERIFY_EXTERNAL_VOLUME('onelake_nts');
-
-# use your new external volume to create an Iceberg table.
-CREATE OR REPLACE ICEBERG TABLE MYDATABASE.PUBLIC.Inventory (
-    InventoryId int,
-    ItemName STRING
-)
-EXTERNAL_VOLUME = 'onelake_exvol'
-CATALOG = 'SNOWFLAKE'
-BASE_LOCATION = 'Inventory/';
-
+# Commandline inside Powershell
+dotnet tool install -g microsoft.sqlpackage
 ```
-##### Create a table shortcut to an Iceberg table in Fabric
+
+![Fabric Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/icebergsnow.jpg?raw=true)
+
+2.	Execute SQL Package command to extrat DACPAC File.
+
+When using SQLPackage, you can choose to extract the DACPAC file either to Azure Blob Storage [hands-on lab](https://learn.microsoft.com/en-us/sql/tools/sqlpackage/sqlpackage-for-azure-synapse-analytics?view=sql-server-ver16#example){:target="_blank"} or directly to your local machine. In my case, I opted for local extraction, as I will need to access the file locally when using the migration assistant in Microsoft Fabric.
+```
+# Commandline inside Powershell
+SqlPackage /Action:Publish /SourceFile:databaseschema.dacpac /TargetServerName:yourserver.sql.azuresynapse.net /TargetDatabaseName:databasename /TargetUser:sqladmin /TargetPassword:{your_password} 
+```
+![Fabric Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/icebergsnow.jpg?raw=true)
+
+##### Extract DACPAC (data-tier application package) file from Synapse Analytics Dedicated SQL Pool
 
 In Microsoft OneLake,create shortcuts to your Apache Iceberg tables from Snowflake, making them accessible across various Fabric workloads.
 Open your workspace and select Manage access, then Add people or groups. Grant the application used by your Snowflake external volume the permissions needed to write data to lakehouses in your workspace. We recommend granting the Contributor role.
