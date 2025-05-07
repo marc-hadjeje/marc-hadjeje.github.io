@@ -1,18 +1,10 @@
 ---
 layout: post
 title: Migrate your Synapse Dedicated pool to Fabric Datawarehouse
-date: "2025-03-18"
+date: "2025-05-07"
 categories: ["Synapse", "Fabric", "Datawarehouse","Migraton"]
 ---
-In May 2024, Snowflake and Microsoft [announced](https://www.snowflake.com/en/blog/microsoft-partnership-enhancing-interoperability/){:target="_blank"} the extension of their partnership through the Iceberg file format, establishing an intelligible exchange format between their technologies. This article explores technically how this announcement optimizes the use of products without compromising your data and analytics strategy.
-
-The goal of this article is not to compare the two solutions, but to explain the interoperability of the two technologies, often examined in the context of consuming Power BI reports hosted on a Snowflake data warehouse.
-
-In order to deliver these benefits, Snowflake and Fabric will add these capabilities for customers :
-
-- Snowflake will be able to store data in Iceberg format in OneLake 
-- Fabric will be able to store data in Iceberg format in OneLake via Apache XTable translation in OneLake.
-
+In this article, we address a common concern among our Azure clients, particularly those who chose Synapse PaaS as their data platform several years ago. Since the launch of Microsoft Fabric in late 2023, many users have been questioning the long-term future of Synapse. Rest assured: as of today, there are no plans to retire Synapse Analytics. The platform remains fully supported and maintained by [Microsoft](https://www.snowflake.com/en/blog/microsoft-partnership-enhancing-interoperability/){:target="_blank"}
 
 ![Fabric Snowflake](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/blog_post_image.jpg?raw=true)
 
@@ -92,11 +84,5 @@ When you set up a shortcut to an Iceberg table folder, OneLake automatically gen
 ##### End to End Scenario with the solution
 
 In this reporting-oriented scenario, this is an architecture where the Snowflake exposition layer writes its tables into Onelake storage in Iceberg format via external volumes. Subsequently, Fabric uses a shortcut to mount the Iceberg file into a table and allow data reading for PowerBI in direct lake mode. This solution enables access to Snowflake data without copying or loading data, offering an alternative to the direct query or import mode for PowerBI. It reduces costs by avoiding intensive use of Snowflake compute and Fabric.
-
-![scenario Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/archi-end.jpg?raw=true)
-
-##### Benchmarking the solution through power bi performance
-
-For our benchmark, we will use the TPC-H, established by the Transaction Processing Performance Council (TPC) in 1994. It is a standard benchmark for decision support systems in retail business scenarios. 
 
 ![scenario Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/archi-end.jpg?raw=true)
