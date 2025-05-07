@@ -4,28 +4,25 @@ title: Migrate your Synapse Dedicated pool to Fabric Datawarehouse
 date: "2025-05-07"
 categories: ["Synapse", "Fabric", "Datawarehouse","Migraton"]
 ---
-In this article, we address a common concern among our Azure clients, particularly those who chose Synapse PaaS as their data platform several years ago. Since the launch of Microsoft Fabric in late 2023, many users have been questioning the long-term future of Synapse. Rest assured: as of today, there are no plans to retire Synapse Analytics. The platform remains fully supported and maintained by [Microsoft](https://www.snowflake.com/en/blog/microsoft-partnership-enhancing-interoperability/){:target="_blank"}
+In this article, we address a common concern among our Azure clients, particularly those who chose [Azure Synapse Analytics](https://learn.microsoft.com/en-us/azure/synapse-analytics/overview-what-is){:target="_blank"} their data platform several years ago. Since the launch of Microsoft Fabric in late 2023, many users have been questioning the long-term future of Synapse. Rest assured: as of today, there are no plans to retire Synapse Analytics. The platform remains fully supported and maintained by [Microsoft](https://blog.fabric.microsoft.com/en-us/blog/microsoft-fabric-explained-for-existing-synapse-users/){:target="_blank"}
+However, the next generation of Microsoft’s big data analytics solutions is now a core part of Microsoft Fabric. For clients considering a migration and looking to transition from a PaaS to a SaaS experience, we will begin by mapping the key components and capabilities between the two platforms.
 
-![Fabric Snowflake](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/blog_post_image.jpg?raw=true)
+![Fabric Synapse Equivalent](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/format.jpg?raw=true)
 
-##### Introduction to lakehouse, data files formats
-Before discussing the features in detail, let's recall the benefits of a lakehouse and the different formats used in the data analytics world.
+##### Introduction to Fabric Migration Assistant for Data Warehouse
+For clients primarily using Spark workloads or data pipelines within Synapse, the migration to Microsoft Fabric is straightforward and well-supported. Microsoft provides detailed documentation to guide this transition:
 
-Lakehouse represents a significant advance in data management, combining flexibility, performance and governance to meet current and future business challenges. But when it comes to storage formats, well, vendors (for the most part) have storage formats that are certainly open, but different.
+-	Overview of migrating Synapse to Fabric
+-   Migrate Synapse Data Pipelines to Fabric
 
-While the fundamentals of table formats are generally similar, each format includes a unique metadata layer on top of Parquet files:
+![MigrateScenario](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/format.jpg?raw=true)
 
-![Fabric Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/format.jpg?raw=true)
+But what about the Synapse Data Warehouse — specifically the Dedicated SQL Pool that relies on its proprietary storage?
 
+##### 
+The Fabric Migration Assistant is a migration experience to copy SQL pools in Azure Synapse Analytics seamlessly into Microsoft Fabric Data Warehouse.
 
-The question is, if their fundamentals aren't all that different, which one should you choose?
-
-##### Apache Xtable project
-
-Well, wouldn't it be better not to have to choose? And so X Table was born, for seamless interoperability between Apache Hudi, Delta Lake and Apache Iceberg tables. 
-Apache XTable provides abstraction interfaces that allow omni-directional interoperability across these 3 differents formats.
-
-![Fabric Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/xtable.jpg?raw=true)
+The Migration Assistant copies metadata and data from the source database, automatically converting the source schema to Fabric Data Warehouse. AI-powered assistance provides quick solutions for migration incompatibility or errors.
 
 ##### Write an Iceberg table to OneLake using Snowflake
 
