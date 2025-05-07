@@ -21,10 +21,10 @@ For clients primarily using Spark workloads or data pipelines within Synapse, th
 
 But what about the Synapse Data Warehouse — specifically the Dedicated SQL Pool that relies on its proprietary storage?
 
-##### 
+##### Step-by-step guide to using the assistant"
 The Fabric Migration Assistant is a migration experience to copy SQL pools in Azure Synapse Analytics seamlessly into Microsoft Fabric Data Warehouse.
-
-The Migration Assistant copies metadata and data from the source database, automatically converting the source schema to Fabric Data Warehouse. AI-powered assistance provides quick solutions for migration incompatibility or errors.
+It allows copies metadata and data from the source database, automatically converting the source schema to Fabric Data Warehouse. AI-powered assistance provides quick solutions for migration incompatibility or errors.
+Microsoft provides a comprehensive list of [prerequisites](https://learn.microsoft.com/en-us/azure/synapse-analytics/overview-what-is){:target="_blank"} on its official documentation site. However, in this guide, I’ll focus on the more complex aspects that may require special attention when using the assistant.
 
 ##### Write an Iceberg table to OneLake using Snowflake
 
