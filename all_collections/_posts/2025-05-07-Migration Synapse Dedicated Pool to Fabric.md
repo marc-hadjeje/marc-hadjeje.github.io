@@ -62,46 +62,30 @@ Here we are — we can now move on to using the migration assistant, which is di
 
 ##### Use The migration assistant in Microsoft Fabric 
 
-Metadata migration
+1.	Metadata migration
+
 
 By selecting "Migrate" during the Review step, a new data warehouse is created, initiating the metadata migration process. During this phase, the T-SQL metadata is converted to formats supported by the Fabric data warehouse. The database objects that will be migrated include tables, views, functions, stored procedures, and security objects. Once the metadata migration is finished, the Migration Assistant opens and displays a summary of the migration.
 
 ![migrationobjectsummary](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/migratedobjectjpg.jpg?raw=true)
 
-Fix Problems with Copilot
+2.	Fix Problems with Copilot
 
-Sometimes, certain objects don’t migrate successfully — either because their T-SQL metadata can’t be translated into a format supported by Fabric, or because the converted code doesn’t run properly. That’s where the “Fix problems” step in the migration assistant comes in handy: it helps you review and correct any scripts that didn’t make it through.
+Sometimes, certain objects don’t migrate successfully — either because their T-SQL metadata can’t be translated into a format supported by Fabric due to limitation that I mentionned earlier, or because the converted code doesn’t run properly. That’s where the “Fix problems” step in the migration assistant comes in handy: it helps you review and correct any scripts that didn’t make it through.
 
-Use Copilot for AI-powered assistance in fixing the errors, select Fix query errors in the Suggested action section. Copilot updates the script with suggestions. Mistakes can happen as Copilot uses AI, so verify code suggestions and make any adjustments you need.
+Use Copilot for AI-powered assistance in fixing some errors, select Fix query errors in the Suggested action section. Copilot updates the script with suggestions. Mistakes can happen as Copilot uses AI, so verify code suggestions and make any adjustments you need.
 
 ![migrationobjectsummary](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/fixthepb.png?raw=true)
 
-Copy Synapse Dedicated pool data by using Fabric 
+3.	Copy Synapse Dedicated pool data by using Fabric 
 
 Copy data helps with migrating data used by the objects you migrate. You can use the copy job documentation to do it manually or follow the steps in the copy job wizard integrated into the Migration assistant.Start by selecting your Synapse Dedicated pool data source, then choose the tables and columns to map to your new Fabric data warehouse tables.
- 
+Not all errors can be resolved automatically with Copilot — some will require manual rework. However, Copilot can still significantly assist you in identifying and addressing these issues.
 ![migrationobjectsummary](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/mappingtable.png?raw=true)
 
-Reroute connections
+
+4.	Reroute connections
 
 This part is clearly missing for now, but it’s expected to be added as the migration assistant is still in preview. The idea is that any data loading or reporting platforms connected to your original source will need to be reconnected to your new Fabric warehouse.
 
-For example, in Azure Synapse Analytics dedicated SQL pools, you can find session information including source application, who is connected in, where the connection is coming from, and if its using Microsoft Entra ID or SQL authentication
-
-```
-# SQL Query on your SQL dedicated DB
-SELECT DISTINCT CASE 
-         WHEN len(tt) = 0
-             THEN app_name
-         ELSE tt
-         END AS application_name
-     ,login_name
-     ,ip_address
-FROM (
-     SELECT DISTINCT app_name
-         ,substring(client_id, 0, CHARINDEX(':', ISNULL(client_id, '0.0.0.0:123'))) AS ip_address
-         ,login_name
-         ,isnull(substring(app_name, 0, CHARINDEX('-', ISNULL(app_name, '-'))), 'h') AS tt
-     FROM sys.dm_pdw_exec_sessions
-     ) AS a;
-```
+For example, in Azure Synapse Analytics dedicated SQL pools, you can find session information including source application by [sys.dm_pdw_exec_sessions](https://learn.microsoft.com/en-us/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-sessions-transact-sql?view=aps-pdw-2016-au7){:target="_blank"} , who is connected in, where the connection is coming from, and if its using Microsoft Entra ID or SQL authentication.
