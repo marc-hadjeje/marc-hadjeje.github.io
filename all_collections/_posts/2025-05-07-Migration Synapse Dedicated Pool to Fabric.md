@@ -32,7 +32,7 @@ Microsoft provides a comprehensive list of [prerequisites](https://learn.microso
 The first step is to extract the metadata from your Synapse Analytics Dedicated SQL Pool. This includes the schema definitions for tables, views, stored procedures, functions, and other database objects.
 For my migration tests, I used a Synapse database model provided as part of a Microsoft [hands-on lab](https://learn.microsoft.com/en-us/azure/synapse-analytics/overview-what-is){:target="_blank"}. This database includes several tables, which I’ve listed below using SQL Server Management Studio
 
-![Fabric Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/icebergsnow.jpg?raw=true)
+![Tables_list](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/Listoftables.jpg?raw=true)
 
 The first challenge I encountered was that, unlike an on-premises MS SQL database, I couldn’t generate the DACPAC of The SQL dedicated Pool Database directly from the SSMS interface. Instead, I had to use the command line SqlPackage CLI to perform the extraction.
 
@@ -43,7 +43,7 @@ The first challenge I encountered was that, unlike an on-premises MS SQL databas
 dotnet tool install -g microsoft.sqlpackage
 ```
 
-![Fabric Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/icebergsnow.jpg?raw=true)
+![Fabric Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/installsqlpackage.png?raw=true)
 
 2.	Execute SQL Package command to extrat DACPAC File.
 
@@ -52,7 +52,7 @@ When using SQLPackage, you can choose to extract the DACPAC file either to Azure
 # Commandline inside Powershell
 SqlPackage /Action:Publish /SourceFile:databaseschema.dacpac /TargetServerName:yourserver.sql.azuresynapse.net /TargetDatabaseName:databasename /TargetUser:sqladmin /TargetPassword:{your_password} 
 ```
-![Fabric Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/icebergsnow.jpg?raw=true)
+![Fabric Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/extractdacsql.png?raw=true)
 
 ##### Extract DACPAC (data-tier application package) file from Synapse Analytics Dedicated SQL Pool
 
