@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Interoperability between Fabric and Snowflake
+title: Migrate your Synapse Dedicated pool to Fabric Datawarehouse
 date: "2025-03-18"
-categories: ["Snowflake", "Fabric", "Iceberg"]
+categories: ["Synapse", "Fabric", "Datawarehouse","Migraton"]
 ---
 In May 2024, Snowflake and Microsoft [announced](https://www.snowflake.com/en/blog/microsoft-partnership-enhancing-interoperability/){:target="_blank"} the extension of their partnership through the Iceberg file format, establishing an intelligible exchange format between their technologies. This article explores technically how this announcement optimizes the use of products without compromising your data and analytics strategy.
 
@@ -99,4 +99,4 @@ In this reporting-oriented scenario, this is an architecture where the Snowflake
 
 For our benchmark, we will use the TPC-H, established by the Transaction Processing Performance Council (TPC) in 1994. It is a standard benchmark for decision support systems in retail business scenarios. 
 
-![scenario Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/archi-end.jpg?raw=true)z
+![scenario Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/archi-end.jpg?raw=true)
