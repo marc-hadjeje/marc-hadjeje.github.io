@@ -9,7 +9,7 @@ Rest assured: as of today, there are no plans to retire Synapse Analytics. The p
 
 However, the next generation of Microsoft’s big data analytics solutions is now a core part of Microsoft Fabric. For clients considering a migration and looking to transition from a PaaS to a SaaS experience, we will begin by mapping the key components and capabilities between the two platforms.
 
-![Fabric Synapse Equivalent](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/format.jpg?raw=true)
+![Fabric Synapse Equivalent](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/synapse-fabric.jpg?raw=true)
 
 ##### Introduction to Fabric Migration Assistant for Data Warehouse
 
@@ -18,7 +18,7 @@ For clients primarily using Spark workloads or data pipelines within Synapse, th
 -	Overview of migrating Synapse to Fabric
 -   Migrate Synapse Data Pipelines to Fabric
 
-![MigrateScenario](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/format.jpg?raw=true)
+![MigrateScenario](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/migration-scenariosspark.png?raw=true)
 
 But what about the Synapse Data Warehouse — specifically the Dedicated SQL Pool that relies on its proprietary storage?
 
