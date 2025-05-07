@@ -62,13 +62,13 @@ Here we are — we can now move on to using the migration assistant, which is di
 
 ##### Use The migration assistant in Microsoft Fabric 
 
-1. Metadata migration
+Metadata migration
 
 By selecting "Migrate" during the Review step, a new data warehouse is created, initiating the metadata migration process. During this phase, the T-SQL metadata is converted to formats supported by the Fabric data warehouse. The database objects that will be migrated include tables, views, functions, stored procedures, and security objects. Once the metadata migration is finished, the Migration Assistant opens and displays a summary of the migration.
 
 ![migrationobjectsummary](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/migratedobjectjpg.jpg?raw=true)
 
-2. Fix Problems with Copilot
+Fix Problems with Copilot
 
 Sometimes, certain objects don’t migrate successfully — either because their T-SQL metadata can’t be translated into a format supported by Fabric, or because the converted code doesn’t run properly. That’s where the “Fix problems” step in the migration assistant comes in handy: it helps you review and correct any scripts that didn’t make it through.
 
@@ -76,13 +76,13 @@ Use Copilot for AI-powered assistance in fixing the errors, select Fix query err
 
 ![migrationobjectsummary](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/fixthepb.png?raw=true)
 
-3. Copy Synapse Dedicated pool data by using Fabric 
+Copy Synapse Dedicated pool data by using Fabric 
 
 Copy data helps with migrating data used by the objects you migrate. You can use the copy job documentation to do it manually or follow the steps in the copy job wizard integrated into the Migration assistant.Start by selecting your Synapse Dedicated pool data source, then choose the tables and columns to map to your new Fabric data warehouse tables.
  
 ![migrationobjectsummary](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/mappingtable.png?raw=true)
 
-4. Reroute connections
+Reroute connections
 
 This part is clearly missing for now, but it’s expected to be added as the migration assistant is still in preview. The idea is that any data loading or reporting platforms connected to your original source will need to be reconnected to your new Fabric warehouse.
 
