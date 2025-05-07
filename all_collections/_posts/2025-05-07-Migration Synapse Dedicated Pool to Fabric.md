@@ -66,11 +66,12 @@ Here we are — we can now move on to using the migration assistant, which is di
 
 By selecting "Migrate" during the Review step, a new data warehouse is created, initiating the metadata migration process. During this phase, the T-SQL metadata is converted to formats supported by the Fabric data warehouse. The database objects that will be migrated include tables, views, functions, stored procedures, and security objects. Once the metadata migration is finished, the Migration Assistant opens and displays a summary of the migration.
 
-![migrationobjectsummary](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/migratedobject.jpg?raw=true)
+![migrationobjectsummary](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/migratedobjectjpg.jpg?raw=true)
 
 2. Fix Problems with Copilot
 
 Sometimes, certain objects don’t migrate successfully — either because their T-SQL metadata can’t be translated into a format supported by Fabric, or because the converted code doesn’t run properly. That’s where the “Fix problems” step in the migration assistant comes in handy: it helps you review and correct any scripts that didn’t make it through.
+
 Use Copilot for AI-powered assistance in fixing the errors, select Fix query errors in the Suggested action section. Copilot updates the script with suggestions. Mistakes can happen as Copilot uses AI, so verify code suggestions and make any adjustments you need.
 
 ![migrationobjectsummary](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/fixthepb.png?raw=true)
