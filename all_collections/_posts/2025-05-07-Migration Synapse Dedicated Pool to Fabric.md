@@ -83,7 +83,7 @@ Copy data helps with migrating data used by the objects you migrate. You can use
 
 4. Reroute connections
 
-This part is clearly missing for now, but it’s expected to be added as the product is still in preview. The idea is that any data loading or reporting platforms connected to your original source will need to be reconnected to your new Fabric warehouse.
+This part is clearly missing for now, but it’s expected to be added as the migration assistant is still in preview. The idea is that any data loading or reporting platforms connected to your original source will need to be reconnected to your new Fabric warehouse.
 
 For example, in Azure Synapse Analytics dedicated SQL pools, you can find session information including source application, who is connected in, where the connection is coming from, and if its using Microsoft Entra ID or SQL authentication
 
