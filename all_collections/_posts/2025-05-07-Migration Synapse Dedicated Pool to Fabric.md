@@ -87,7 +87,8 @@ This part is clearly missing for now, but it’s expected to be added as the pro
 
 For example, in Azure Synapse Analytics dedicated SQL pools, you can find session information including source application, who is connected in, where the connection is coming from, and if its using Microsoft Entra ID or SQL authentication
 
-# SQL Code
+```
+# SQL Query on your SQL dedicated DB
 SELECT DISTINCT CASE 
          WHEN len(tt) = 0
              THEN app_name
