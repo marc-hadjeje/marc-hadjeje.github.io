@@ -14,7 +14,7 @@ In order to deliver these benefits, Snowflake and Fabric will add these capabili
 - Fabric will be able to store data in Iceberg format in OneLake via Apache XTable translation in OneLake.
 
 
-![Fabric Snowflake](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/blog_post_image.jpg?raw=true)
+![Fabric Snowflake](/assets/images/blog_post_image.jpg)
 
 ##### Introduction to lakehouse, data files formats
 Before discussing the features in detail, let's recall the benefits of a lakehouse and the different formats used in the data analytics world.
@@ -23,7 +23,7 @@ Lakehouse represents a significant advance in data management, combining flexibi
 
 While the fundamentals of table formats are generally similar, each format includes a unique metadata layer on top of Parquet files:
 
-![Fabric Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/format.jpg?raw=true)
+![Fabric Architecture](/assets/images/format.jpg)
 
 
 The question is, if their fundamentals aren't all that different, which one should you choose?
@@ -33,13 +33,13 @@ The question is, if their fundamentals aren't all that different, which one shou
 Well, wouldn't it be better not to have to choose? And so X Table was born, for seamless interoperability between Apache Hudi, Delta Lake and Apache Iceberg tables. 
 Apache XTable provides abstraction interfaces that allow omni-directional interoperability across these 3 differents formats.
 
-![Fabric Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/xtable.jpg?raw=true)
+![Fabric Architecture](/assets/images/xtable.jpg)
 
 ##### Write an Iceberg table to OneLake using Snowflake
 
 In Snowflake , Apache Iceberg™ tables for Snowflake combine the performance and query semantics of typical Snowflake tables with external cloud storage that you manage. They are ideal for existing data lakes that you cannot, or choose not to, store in Snowflake.
 
-![Fabric Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/icebergsnow.jpg?raw=true)
+![Fabric Architecture](/assets/images/icebergsnow.jpg)
 
 Make sure your Fabric capacity is in the same Azure location as your Snowflake instance.
 In Snowflake, set up your EXTERNAL VOLUME using the path to the Files folder in your lakehouse
@@ -86,17 +86,16 @@ In Microsoft OneLake,create shortcuts to your Apache Iceberg tables from Snowfla
 Open your workspace and select Manage access, then Add people or groups. Grant the application used by your Snowflake external volume the permissions needed to write data to lakehouses in your workspace. We recommend granting the Contributor role.
 When you set up a shortcut to an Iceberg table folder, OneLake automatically generates the necessary Delta Lake metadata (the Delta log) for that table, ensuring the Delta Lake metadata is available through the shortcut.
 
-![Fabric Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/iceberg-shortcut-diagram.jpeg?raw=true)
+![Fabric Architecture](/assets/images/iceberg-shortcut-diagram.jpeg)
 
 
 ##### End to End Scenario with the solution
 
 In this reporting-oriented scenario, this is an architecture where the Snowflake exposition layer writes its tables into Onelake storage in Iceberg format via external volumes. Subsequently, Fabric uses a shortcut to mount the Iceberg file into a table and allow data reading for PowerBI in direct lake mode. This solution enables access to Snowflake data without copying or loading data, offering an alternative to the direct query or import mode for PowerBI. It reduces costs by avoiding intensive use of Snowflake compute and Fabric.
 
-![scenario Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/archi-end.jpg?raw=true)
+![scenario Architecture](/assets/images/archi-end.jpg)
 
-##### Benchmarking the solution through power bi performance
 
-For our benchmark, we will use the TPC-H, established by the Transaction Processing Performance Council (TPC) in 1994. It is a standard benchmark for decision support systems in retail business scenarios. 
+##### Soonest Benchmarking the solution through power bi performance
 
-![scenario Architecture](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/archi-end.jpg?raw=true)z
+For our benchmark, we will use the TPC-H, established by the Transaction Processing Performance Council (TPC) . It is a standard benchmark for decision support systems in retail business scenarios. 
