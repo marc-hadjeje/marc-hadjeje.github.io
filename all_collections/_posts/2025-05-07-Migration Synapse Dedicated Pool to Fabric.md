@@ -10,7 +10,7 @@ Rest assured: as of today, there are no plans to retire Synapse Analytics. The p
 However, the next generation of Microsoft’s big data analytics solutions is now a core part of Microsoft Fabric. For clients considering a migration and looking to transition from a PaaS to a SaaS experience.
 First we will begin by mapping the key components and capabilities between the two platforms.
 
-![Fabric Synapse Equivalent](https://github.com/marc-hadjeje/marc-hadjeje.github.io/blob/main/assets/images/synapse-fabric.jpg?raw=true)
+![Fabric Synapse Equivalent](/assets/images/synapse-fabric.jpg)
 
 ##### Introduction to Fabric Migration Assistant for Data Warehouse
 
