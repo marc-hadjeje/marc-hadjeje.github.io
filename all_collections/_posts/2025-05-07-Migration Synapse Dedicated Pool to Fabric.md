@@ -97,7 +97,7 @@ For example, in Azure Synapse Analytics dedicated SQL pools, you can find sessio
 
 ##### Conclusion
 
-Migrating a **Synapse Dedicated SQL Pool** to **Microsoft Fabric Data Warehouse** aligns with the evolution toward a unified, SaaS-oriented analytics platform. With the **Fabric Migration Assistant**, Microsoft offers a "semi-automated" process to transfer metadata, T-SQL objects, and data, while integrating AI-powered support via **Copilot** to resolve syntax or compatibility issues.
+Migrating a **Synapse Dedicated SQL Pool** to **Microsoft Fabric Data Warehouse**  aligns with the evolution toward a unified, SaaS-oriented analytics platform. With the Fabric this Datawarehouse migration Assistant, Microsoft offers a "semi-automated" process to transfer metadata, T-SQL objects, and data, while integrating AI-powered support via **Copilot** to resolve syntax or compatibility issues.
 
 However, this migration is not trivial even with the assistance of Copilot,. It requires:
 - A **preliminary dependency analysis** (unsupported objects, specific T-SQL functions, security),
