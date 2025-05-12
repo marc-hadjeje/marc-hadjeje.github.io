@@ -4,8 +4,8 @@ title: Migrate your Synapse Dedicated pool to Fabric Datawarehouse
 date: "2025-05-07"
 categories: ["Synapse", "Fabric", "Datawarehouse","Migraton"]
 ---
-In this article, we address a common concern among our Azure clients, particularly those who chose [Azure Synapse Analytics](https://learn.microsoft.com/en-us/azure/synapse-analytics/overview-what-is){:target="_blank"} their data platform several months ago. Since the launch of Microsoft Fabric in late 2023, many users have been questioning the long-term future of Synapse.
-Rest assured: as of today, there are no plans to retire Synapse Analytics. The platform remains fully supported and maintained by [Microsoft](https://blog.fabric.microsoft.com/en-us/blog/microsoft-fabric-explained-for-existing-synapse-users/){:target="_blank"}.
+In this article, we address a common concern among our Azure clients, particularly those who chose [Azure Synapse Analytics](https://learn.microsoft.com/en-us/azure/synapse-analytics/overview-what-is){:target="_blank"} their data platform several months ago. Indeed since the launch of Microsoft Fabric in late 2023, many users have been questioning the long-term future of Synapse.
+Rest assured: as of today, there are no plans to retire Synapse Analytics, which continues to be our PaaS analytics service platform.The platform remains fully supported and maintained by Microsoft as announced in this [post](https://blog.fabric.microsoft.com/en-us/blog/microsoft-fabric-explained-for-existing-synapse-users/){:target="_blank"} by one of our leaders.
 
 However, the next generation of Microsoft’s big data analytics solutions is now a core part of Microsoft Fabric. For clients considering a migration and looking to transition from a PaaS to a SaaS experience.
 First we will begin by mapping the key components and capabilities between the two platforms.
@@ -14,7 +14,7 @@ First we will begin by mapping the key components and capabilities between the t
 
 ##### Introduction to Fabric Migration Assistant for Data Warehouse
 
-For clients primarily using Spark workloads or data pipelines within Synapse, the migration to Microsoft Fabric is straightforward and well-supported. Microsoft provides detailed documentation to guide this transition:
+For clients primarily using Spark workloads or data pipelines within Synapse, the migration to Microsoft Fabric is straightforward and well-supported. Microsoft provides detailed [documentation](https://learn.microsoft.com/en-us/fabric/data-engineering/migrate-synapse-overview){:target="_blank"} to guide this transition:
 
 -	Overview of migrating Synapse to Fabric
 -   Migrate Synapse Data Pipelines to Fabric
