@@ -5,9 +5,9 @@ date: "2025-05-07"
 categories: ["Synapse", "Fabric", "Datawarehouse","Migraton"]
 ---
 In this article, we address a common concern among our Azure clients, particularly those who chose [Azure Synapse Analytics](https://learn.microsoft.com/en-us/azure/synapse-analytics/overview-what-is){:target="_blank"} their data platform several months ago. Indeed since the launch of Microsoft Fabric in late 2023, many users have been questioning the long-term future of Synapse.
-Rest assured: as of today, there are no plans to retire Synapse Analytics, which continues to be our PaaS analytics service platform.The platform remains fully supported and maintained by Microsoft as announced in this [post](https://blog.fabric.microsoft.com/en-us/blog/microsoft-fabric-explained-for-existing-synapse-users/){:target="_blank"} by one of our leaders.
+Rest assured: as of today, **there are no plans to retire Synapse Analytics**, which continues to be our PaaS analytics service platform.The platform remains fully supported and maintained by Microsoft as announced in this [post](https://blog.fabric.microsoft.com/en-us/blog/microsoft-fabric-explained-for-existing-synapse-users/){:target="_blank"} by one of our leaders.
 
-However, the next generation of Microsoft’s big data analytics solutions is now a core part of Microsoft Fabric. For clients considering a migration and looking to transition from a PaaS to a SaaS experience.
+However, the next generation of Microsoft’s big data analytics solutions is now a **core part of Microsoft Fabric**. For clients considering a migration and looking to transition from a PaaS to a SaaS experience.
 First we will begin by mapping the key components and capabilities between the two platforms.
 
 ![Fabric Synapse Equivalent](/assets/images/synapse-fabric.jpg)
@@ -21,22 +21,25 @@ For clients primarily using Spark workloads or data pipelines within Synapse, th
 
 ![MigrateScenario](/assets/images/migration-scenariosspark.png)
 
-But what about the Synapse Data Warehouse — specifically the Dedicated SQL Pool that relies on its proprietary storage? It’s also important to note that Fabric Data Warehouse still has some limitations. However, the product is evolving rapidly, with new features being added regularly. You can follow the latest updates and planned improvements on the official Microsoft Fabric [roadmap](https://learn.microsoft.com/en-us/fabric/release-plan/data-warehouse){:target="_blank"} and review the current list of [limitations](https://learn.microsoft.com/en-us/fabric/data-warehouse/limitations){:target="_blank"}
+But what about the Synapse Data Warehouse — **specifically the Dedicated SQL Pool** that relies on its proprietary storage? It’s also important to note that Fabric Data Warehouse still has some limitations. However, the product is evolving rapidly, with new features being added regularly. You can follow the latest updates and planned improvements on the official Microsoft Fabric [roadmap](https://learn.microsoft.com/en-us/fabric/release-plan/data-warehouse){:target="_blank"} and review the current list of [limitations](https://learn.microsoft.com/en-us/fabric/data-warehouse/limitations){:target="_blank"}
 
 ##### Step-by-step guide to using the assistant
 
-The Fabric Migration Assistant is a migration experience to copy SQL pools in Azure Synapse Analytics seamlessly into Microsoft Fabric Data Warehouse.
-It allows copies metadata and data from the source database, automatically converting the source schema to Fabric Data Warehouse. AI-powered assistance provides quick solutions for migration incompatibility or errors.
-Microsoft provides a comprehensive list of [prerequisites](https://learn.microsoft.com/en-us/fabric/data-warehouse/migrate-with-migration-assistant#prerequisites){:target="_blank"} on its official documentation site. However, in this guide, I’ll focus on the more complex aspects that may require special attention when using the assistant.
+**The Fabric Migration Assistant is a migration experience** to copy SQL pools in Azure Synapse Analytics seamlessly into Microsoft Fabric Data Warehouse.
+It allows copies metadata and data from the source database, automatically converting the source schema to Fabric Data Warehouse.
+**AI-powered assistance** provides quick solutions for migration incompatibility or errors.
+
+Microsoft provides a comprehensive list of [prerequisites](https://learn.microsoft.com/en-us/fabric/data-warehouse/migrate-with-migration-assistant#prerequisites){:target="_blank"} on its official documentation site.
+However, in this guide, I’ll focus on **the more complex aspects** that may require special attention when using the assistant.
 
 ##### Extract DACPAC (data-tier application package) file from Synapse Analytics Dedicated SQL Pool
 
 The first step is to extract the metadata from your Synapse Analytics Dedicated SQL Pool. This includes the schema definitions for tables, views, stored procedures, functions, and other database objects.
-For my migration tests, I used a Synapse database model provided as part of a Microsoft [hands-on lab](https://github.com/solliancenet/MCW-Azure-Synapse-Analytics/blob/master/Hands-on%20lab/HOL%20step-by%20step%20-%20Azure%20Synapse%20Analytics%20end-to-end%20solution.md){:target="_blank"}. This database includes several tables, which I’ve listed below using SQL Server Management Studio
+For my migration tests, I used a Synapse database model provided as part of a Microsoft [hands-on lab](https://github.com/solliancenet/MCW-Azure-Synapse-Analytics/blob/master/Hands-on%20lab/HOL%20step-by%20step%20-%20Azure%20Synapse%20Analytics%20end-to-end%20solution.md){:target="_blank"}. This database includes several tables, which I’ve listed below using SQL Server Management Studio.I've also added some SQL Views or stored procedures that customers like to use for data transformations in their datawarehouses
 
 ![Tables_list](/assets/images/Listoftables.jpg)
 
-The first challenge I encountered was that, unlike an on-premises MS SQL database, I couldn’t generate the DACPAC of The SQL dedicated Pool Database directly from the SSMS interface. Instead, I had to use the command line SqlPackage CLI to perform the extraction.
+The first challenge I encountered was that, unlike an on-premises MS SQL database, I couldn’t generate the DACPAC of The SQL dedicated Pool Database directly from the [SSMS](https://learn.microsoft.com/en-us/ssms/download-sql-server-management-studio-ssms){:target="_blank"} (Sql Server Management Studio) interface. Instead, I had to use the command line [SqlPackage](https://learn.microsoft.com/en-us/sql/tools/sqlpackage/sqlpackage-download?view=sql-server-ver16){:target="_blank"} CLI to perform the extraction.
 
 1.	Download and install SqlPackage
 
@@ -49,7 +52,7 @@ dotnet tool install -g microsoft.sqlpackage
 
 2.	Execute SQL Package command to extrat DACPAC File.
 
-When using SQLPackage, you can choose to extract the DACPAC file either to [Azure Blob Storage](https://learn.microsoft.com/en-us/sql/tools/sqlpackage/sqlpackage-for-azure-synapse-analytics?view=sql-server-ver16#example){:target="_blank"} or directly to your local machine. In my case, I opted for local extraction, as I will need to access the file locally when using the migration assistant in Microsoft Fabric.
+When using SQLPackage, you can choose to extract the DACPAC file either to Azure Blob Storage [here](https://learn.microsoft.com/en-us/sql/tools/sqlpackage/sqlpackage-for-azure-synapse-analytics?view=sql-server-ver16#example){:target="_blank"} or directly to your local machine. In my case, I opted for local extraction, as I will need to access the file locally when using the migration assistant in Microsoft Fabric.
 ```
 # Commandline inside Powershell
 SqlPackage /Action:Extract /SourceFile:databaseschema.dacpac /TargetServerName:yourserver.sql.azuresynapse.net /TargetDatabaseName:databasename /TargetUser:sqladmin /TargetPassword:{your_password} 
