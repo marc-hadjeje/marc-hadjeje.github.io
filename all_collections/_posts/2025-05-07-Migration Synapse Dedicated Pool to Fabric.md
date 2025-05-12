@@ -32,7 +32,7 @@ It allows copies metadata and data from the source database, automatically conve
 Microsoft provides a comprehensive list of [prerequisites](https://learn.microsoft.com/en-us/fabric/data-warehouse/migrate-with-migration-assistant#prerequisites){:target="_blank"} on its official documentation site.
 However, in this guide, I’ll focus on **the more complex aspects** that may require special attention when using the assistant.
 
-##### Extract DACPAC (data-tier application package) file from Synapse Analytics Dedicated SQL Pool
+1. Extract DACPAC (data-tier application package) file from Synapse Analytics Dedicated SQL Pool
 
 The first step is to extract the metadata from your Synapse Analytics Dedicated SQL Pool. This includes the schema definitions for tables, views, stored procedures, functions, and other database objects.
 For my migration tests, I used a Synapse database model provided as part of a Microsoft [hands-on lab](https://github.com/solliancenet/MCW-Azure-Synapse-Analytics/blob/master/Hands-on%20lab/HOL%20step-by%20step%20-%20Azure%20Synapse%20Analytics%20end-to-end%20solution.md){:target="_blank"}.
@@ -64,9 +64,9 @@ Here we are — we can now move on to using the migration assistant, which is di
 
 ![migrateinfabric](/assets/images/migrateinfabric.jpg)
 
-##### Use the migration assistant in Microsoft Fabric
+2. Use the migration assistant in Microsoft Fabric
 
-    **Metadata migration**
+   **Fix Problems with Copilot**
 
 By selecting "Migrate" during the Review step, a new data warehouse is created, initiating the metadata migration process. During this phase, the T-SQL metadata is converted to formats supported by the Fabric data warehouse.
 The database objects that will be migrated include tables, views, functions, stored procedures, and security objects. Once the metadata migration is finished, the Migration Assistant opens and displays a summary of the migration.
@@ -82,7 +82,6 @@ Use Copilot for AI-powered assistance in fixing some errors, select Fix query er
 ![migrationobjectsummary](/assets/images/fixthepb.png)
 
   **Copy Synapse Dedicated pool data by using Fabric**
-
 
 Copy data helps with migrating data used by the objects you migrate. You can use the copy job documentation to do it manually or follow the steps in the copy job wizard integrated into the Migration assistant.Start by selecting your Synapse Dedicated pool data source, then choose the tables and columns to map to your new Fabric data warehouse tables.
 Not all errors can be resolved automatically with Copilot — some will require manual rework. However, Copilot can still significantly assist you in identifying and addressing these issues.
