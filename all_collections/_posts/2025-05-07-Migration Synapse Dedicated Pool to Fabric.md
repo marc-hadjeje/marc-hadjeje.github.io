@@ -66,7 +66,7 @@ Here we are — we can now move on to using the migration assistant, which is di
 
 ![migrateinfabric](/assets/images/migrateinfabric.jpg)
 
-**Use the migration assistant in Microsoft Fabric**
+##### Use the migration assistant in Microsoft Fabric
 
 1)Metadata migration
 
