@@ -105,6 +105,7 @@ However, this migration is not trivial (even with the assistance of Copilot) and
 - **Reconfiguration of data pipelines** and reporting tools connected to the original source.
 
 **It’s important to note that this migration assistant is currently in preview within Microsoft Fabric at the time of writing. Many of the limitations highlighted by the migration assistant are expected to be addressed or resolved by the time the tool reaches General Availability (GA).**  
+
 For organizations looking to adopt a SaaS-based approach, this migration is not only feasible but also strongly encouraged, as it enables seamless integration with the broader Microsoft Fabric ecosystem.  
 
 Once migrated, the Fabric Data Warehouse can leverage [shortcuts](https://learn.microsoft.com/en-us/fabric/onelake/onelake-shortcuts){:target="_blank"} to access data across other Fabric engines—such as Lakehouse, [Real-Time Intelligence]( https://learn.microsoft.com/en-us/fabric/real-time-intelligence/overview){:target="_blank"}, and Power BI—unlocking a unified and highly interoperable analytics experience.
