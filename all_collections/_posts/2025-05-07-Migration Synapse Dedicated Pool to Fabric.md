@@ -81,10 +81,10 @@ Use Copilot for AI-powered assistance in fixing some errors, select Fix query er
 
 ![migrationobjectsummary](/assets/images/fixthepb.png)
 
-3)Copy Synapse Dedicated pool data by using Fabric**
+3)Copy Synapse Dedicated pool data by using Fabric
 
 
-Copy data helps with migrating data used by the objects you migrate. You can use the copy job documentation to do it manually or follow the steps in the copy job wizard integrated into the Migration assistant.Start by selecting your Synapse Dedicated pool data source, then choose the tables and columns to map to your new Fabric data warehouse tables.
+Copy data helps with migrating data used by the objects you migrate. You can use the copy job [documentation](https://learn.microsoft.com/en-us/fabric/data-factory/what-is-copy-job){:target="_blank"} to do it manually or follow the steps in the copy job wizard integrated into the Migration assistant.Start by selecting your Synapse Dedicated pool data source, then choose the tables and columns to map to your new Fabric data warehouse tables.
 Not all errors can be resolved automatically with Copilot — some will require manual rework. However, Copilot can still significantly assist you in identifying and addressing these issues.
 
 ![migrationobjectsummary](/assets/images/mappingtable.png)
