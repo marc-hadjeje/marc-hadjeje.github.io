@@ -21,7 +21,9 @@ For clients primarily using Spark workloads or data pipelines within Synapse, th
 
 ![MigrateScenario](/assets/images/migration-scenariosspark.png)
 
-But what about the Synapse Data Warehouse — **specifically the Dedicated SQL Pool** that relies on its proprietary storage? It’s also important to note that Fabric Data Warehouse still has some limitations. However, the product is evolving rapidly, with new features being added regularly.  You can follow the latest updates and planned improvements on the official Microsoft Fabric [roadmap](https://learn.microsoft.com/en-us/fabric/release-plan/data-warehouse){:target="_blank"} and review the current list of [limitations](https://learn.microsoft.com/en-us/fabric/data-warehouse/limitations){:target="_blank"}
+But what about the Synapse Data Warehouse — **specifically the Dedicated SQL Pool** that relies on its proprietary storage?  
+
+It’s also important to note that Fabric Data Warehouse still has some limitations. However, the product is evolving rapidly, with new features being added regularly.  You can follow the latest updates and planned improvements on the official Microsoft Fabric [roadmap](https://learn.microsoft.com/en-us/fabric/release-plan/data-warehouse){:target="_blank"} and review the current list of [limitations](https://learn.microsoft.com/en-us/fabric/data-warehouse/limitations){:target="_blank"}
 
 ##### Step-by-step guide to using the assistant
 
