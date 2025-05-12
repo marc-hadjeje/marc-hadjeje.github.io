@@ -42,8 +42,7 @@ This database includes several tables, which I’ve listed below using SQL Serve
 
 The first challenge I encountered was that, unlike an on-premises MS SQL database, I couldn’t generate the DACPAC of The SQL dedicated Pool Database directly from the [SSMS](https://learn.microsoft.com/en-us/ssms/download-sql-server-management-studio-ssms){:target="_blank"} (Sql Server Management Studio) interface. Instead, I had to use the command line [SqlPackage](https://learn.microsoft.com/en-us/sql/tools/sqlpackage/sqlpackage-download?view=sql-server-ver16){:target="_blank"} CLI to perform the extraction.
 
-1. Download and install SqlPackage
-
+1) Download and install SqlPackage
 
 ```
 # Commandline inside Powershell
@@ -52,7 +51,7 @@ dotnet tool install -g microsoft.sqlpackage
 
 ![installsqlpackage](/assets/images/installsqlpackage.png)
 
-2. Execute SQL Package command to extract DACPAC File
+2) Execute SQL Package command to extract DACPAC File
 
 When using SQLPackage, you can choose to extract the DACPAC file either to Azure Blob Storage [here](https://learn.microsoft.com/en-us/sql/tools/sqlpackage/sqlpackage-for-azure-synapse-analytics?view=sql-server-ver16#example){:target="_blank"} or directly to your local machine. In my case, I opted for local extraction, as I will need to access the file locally when using the migration assistant in Microsoft Fabric.
 ```
@@ -95,7 +94,6 @@ Not all errors can be resolved automatically with Copilot — some will require 
 This part is clearly missing for now, but it’s expected to be added as the migration assistant is still in preview. The idea is that any data loading or reporting platforms connected to your original source will need to be reconnected to your new Fabric warehouse.
 
 For example, in Azure Synapse Analytics dedicated SQL pools, you can find session information including source application by [sys.dm_pdw_exec_sessions](https://learn.microsoft.com/en-us/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-sessions-transact-sql?view=aps-pdw-2016-au7){:target="_blank"} , who is connected in, where the connection is coming from, and if its using Microsoft Entra ID or SQL authentication.
-
 
 ##### Conclusion
 
